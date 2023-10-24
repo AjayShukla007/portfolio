@@ -1,0 +1,158 @@
+.home {
+  /* border: 2px solid grey; */
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  /* align-items: center; */
+  padding: 0 0 0 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+}
+.Name {
+  /* border: 2px solid red; */
+  color: #ffffff;
+  z-index: 5;
+}
+.Name:hover {
+  color: #ff5d5dad;
+}
+.work {
+  /* border: 2px solid red; */
+  color: #ffffffad;
+  z-index: 5;
+  height: 55px;
+}
+.icons {
+  z-index: 5;
+  /* border: 2px solid blue; */
+  display: flex;
+  gap: 5px;
+}
+.icons div{
+  width: 50px;
+  height: 50px;
+}
+.homeBackground {
+  width: 200px;
+  height: 200px;
+}
+#tsparticles {
+  width: 200px;
+  height: 200px;
+}
+.motivation{
+  position: fixed;
+  top: 30%;
+  left: 10%;
+  width: 70vw;
+  z-index: 4;
+  touch-action: none;
+  pointer-events: none;
+  border: 2px solid red;
+  color: orange;
+}
+.lineDiv{
+  display: flex;
+}
+.line{
+  width: 30vw;
+  height: 15px;
+  background: yellow;
+}
+.line2{
+  width: 10vw;
+  transform: rotate(-45deg);
+}
+#j-path:hover {
+  /* fill: #de0061; */
+  /* stroke: #de0061; */
+  transition: all 0.5s ease-in-out;
+  animation: jPath 1s ease;
+}
+#s-path:hover {
+  /* stroke: #de0061; */
+  transition: all 0.5s ease-in-out;
+  animation: sPath 1s ease;
+}
+@keyframes jPath{
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(10%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+@keyframes sPath{
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(-10%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+.ReactIcon:hover{
+  /* stroke: blue; */
+  transition: all 1s ease-in-out;
+  filter: drop-shadow(0 0 3px #ffffff);
+}
+.ExpressGroup:hover .ExpressIcon{
+  transition: all 1s ease-in-out;
+  /* filter: drop-shadow(0 0 5px #ffd600); */
+  stroke: #ffd600;
+  stroke-opacity: 0.5;
+} 
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    
+    fill: url(#grad1);
+  }
+  to {
+    fill: url(#grad1);
+  }
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0px 0px 0px #ff0000);
+  }
+  to {
+    filter: drop-shadow(0px 0px 10px #ff0000);
+  }
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 5s linear forwards, fill 2s linear 5s forwards, glow 2s linear 7s forwards;
+  
+  /* Give it a "3D" appearance */
+  stroke-width: 3px;
+}
+
+/* .path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 10s linear forwards;
+} */
+

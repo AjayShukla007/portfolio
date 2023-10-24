@@ -1,0 +1,11 @@
+.navItemsBg {
+  background: #676767a7;
+  filter: blur(0.5px);
+  /* border: 1px solid white; */
+  border-radius: 50px;
+  width: 340px;
+  height: 80px;
+}
+.teripplebg{
+  border-radius: 50px;
+}

@@ -1,0 +1,50 @@
+.ProjectContainer{
+  width: 80vw;
+  height: 70vmin;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.projectImage{
+  border: 1px solid red;
+  width: 35vmin;
+  height: 35vmin;
+}
+.projectDiscription{
+  width: 35vmin;
+  width: 100%;
+  color: white;
+  border: 1px solid pink;
+  transform: translateY(-50%);
+}
+.projectDetaills{
+  color: white;
+  border: 1px solid blue;
+  width: 44vw;
+  height: 35vmin;
+  /* padding: 0 5% 0 0; */
+  /* flex-grow: 2; */
+  text-align: right;
+}
+.projectTitle{
+  font-size: 2.5vmax;
+  padding: 4% 5% 0 0;
+}
+.projectTitle h1{
+  font-size: 1.5em;
+  margin: 0;
+}
+.projectLang{
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 5%;
+}
+.link{
+  display: flex;
+  justify-content: flex-end;
+  margin: 5% 25%;
+  gap: 10px;
+  overflow: scroll;
+}

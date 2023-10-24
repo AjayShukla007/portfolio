@@ -1,0 +1,69 @@
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.bg{
+  touch-action: none;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 70%;
+  z-index: 4;
+  width: 100vmin;
+  height: 100vmin;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 50%;
+  background: #000000;
+  animation: loadLatter 3s backwards;
+  /* overflow: scroll; */
+}
+.allbg{
+  /* transform: translate(50%,20%); */
+  /* transform: translateX(530%); */
+  /* transform: translateX(300%); */
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 100%;
+  filter: contrast(200%) brightness(150% ) blur(5px);
+  animation: glowLatter 5s ease infinite;
+}
+@keyframes glowLatter{
+  from{
+    filter: contrast(200%) brightness(150% ) blur(5px);
+    /* transform: translateX(0); */
+  }
+  50%{
+    filter: contrast(200%) brightness(250% ) blur(5px);
+    /* transform: translateX(100%); */
+
+  }
+  to{
+    filter: contrast(200%) brightness(150% ) blur(5px) ;
+    /* transform: translateX(0); */
+
+  }
+}
+@keyframes loadLatter{
+  from{
+    filter: grayscale(100%);
+    opacity: 0.5;
+  }
+  to{
+    filter: grayscale(0);
+    opacity: 1;
+  }
+}
+body{
+  background: #000000;
+}
+/* saturate(0) */
