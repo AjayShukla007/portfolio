@@ -2,36 +2,19 @@ import React, { useEffect, useState, useRef } from "react";
 import {
   motion,
   useScroll,
+  useAnimation,
   useTransform,
   useInView,
   useSpring,
   MotionValue,
+  motionValue,
   useMotionValueEvent
 } from "framer-motion";
 import { TERipple } from "tw-elements-react";
 import { Parallax } from 'react-scroll-parallax';
 
-export function useParallax(value, distance) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
-// export function useParallax(value: MotionValue<number>, distance: number) {
-//   return useTransform(value, [0, 1], [-distance, distance]);
-// }
-// export function Image({ id }: { id: number }) {
-//   const ref = useRef(null);
-//   const { scrollYProgress } = useScroll({ target: ref });
-//   const y = useParallax(scrollYProgress, 300);
-
-//   return (
-//     <section>
-//       <div ref={ref}>
-//         <img src={`/${id}.jpg`} alt="A London skyscraper" style={{ y }} />
-//       </div>
-//     </section>
-//   );
-// }
-
 function ProjectItems(props) {
+  
   const divRef = useRef(null);
   const divSapRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -53,6 +36,7 @@ function ProjectItems(props) {
   useEffect(() => {
     if (spanInView) {
       tagSpan.current.classList.add("tagEnter");
+      console.log(tagSpan.current.children[0])
     } else {
       tagSpan.current.classList.remove("tagEnter");
     }
@@ -106,40 +90,54 @@ function ProjectItems(props) {
   const handleMouseLeave2 = () => {
     setOpacity2(0);
   };
-  // const { scrollYProgress } = useScroll();
+  
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: containerRef });
-  // const y1 = useParallax(scrollYProgress, 300);
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, 300]);
   
-  // const { scrollY } = useScroll({
-  //   target: containerRef
-  // });
-  // const y1 = useTransform(scrollY, [0, 1], [0, 300]);
+  const containerView = useInView(containerRef,{
+    margin: "0px 0px -70% 0px"
+  });
   
-useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("x changed to", latest)
-  })
-// useEffect(() => {
-  
-// }, [scrollYProgress]);
+const conOnclick = ()=>{
+  if(containerView){
+    console.log("in view");
+  }else{
+    console.log("not in view");
+    // containerRef.current.scrollTo({
+    //   x:0,
+    //   y:'-100%'
+    // });
+    containerRef.current.scrollIntoView({behavior:"smooth", block: "center", inline:"nearest"});
+  }
+}
+
   return (
     <>
       <TERipple rippleColor="light" rippleRadius={25} className="teripplebg" >
         <motion.div
           className="ProjectContainer base-input"
+          style={{
+            visibility:!containerView?'none':'visible',
+            filter:containerView?'blur(0px)':'blur(2px)',
+            transition:'1s ease all'
+          }}
           onMouseMove={handleMouseMove}
           onFocus={handleFocus}
           onBlur={handleBlur}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          
+          ref={containerRef}
+          onClick={()=>conOnclick()}
         >
-        <Parallax speed={-20}>
-          <motion.div ref={paraRef.ref} style={{ transition:'5s ease all' }} className="projectImage" >
+       {/* <Parallax speed={-20} translateY={20}
+        targetElement={targetElement}
+          animate={controls}
+        >*/}
+          <motion.div style={{y:containerView?'0px':'-100px', transition:'0.5s ease all' }} className="projectImage" 
+          animate={{ y: props.scrollPosition }}
+          >
             <img src={props.image} alt="projectImage"/>
           </motion.div>
-      </Parallax>
+      {/*</Parallax>*/}
           <div className="projectDetaills">
             <div
               ref={titleRef}
@@ -190,7 +188,12 @@ useMotionValueEvent(scrollYProgress, "change", (latest) => {
                 className="overlay-input2"
               ></div>
             </div>
-            {props.deacription}
+            <div className="deacriptionText">
+              {props.deacription}
+            </div>
+            <div className="nextItem">
+              case studies
+            </div>
           </div>
         </motion.div>
         <div

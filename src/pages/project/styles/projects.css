@@ -1,13 +1,14 @@
 .allProjects{
+  /* border: 1px solid red; */
   height: 80vmin;
   overflow-y: scroll;
   /* overflow-y: visible; */
-  overflow-x: visible;
+  overflow-x: visible !important;
   scroll-snap-type: y mandatory;
   box-shadow: 0 -20px 5px #000000 inset;
 }
 .ProjectContainer{
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   margin: 4% 0 0 0;
   width: 80vw;
   height: 70vmin;
@@ -16,6 +17,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   /* overflow: hidden; */
+  overflow-x: visible;
 }
 .projectImage{
   /* border: 1px solid red; */
@@ -24,6 +26,7 @@
   height: 35vmin;
   background: grey;
   position: relative;
+  /* overflow-y: scroll; */
 }
 .projectDetaills{
   color: white;
@@ -147,8 +150,7 @@
 }
 .projectDiscription{
   overflow: hidden;
-  width: 35vmin;
-  width: 100%;
+  width: 90%;
   color: white;
   /* border: 1px solid pink; */
   transform: translateY(-50%);
@@ -213,4 +215,19 @@
   padding: 0.875rem;
   opacity: 0;
   transition: opacity 0.5s;
+}
+
+.nextItem{
+  width: 10%;
+  height: 10%;
+  background: #5e5e5e;
+  color: black;
+  position: absolute;
+  bottom: 5%;
+  right: 10%;
+  transition: 0.8s ease all;
+  border-radius: 4px;
+}
+.nextItem:hover{
+  background: #755538;
 }

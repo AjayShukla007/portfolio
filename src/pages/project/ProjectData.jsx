@@ -32,5 +32,16 @@ const projectData = [
     },
     deacription:"project deacription this should be long"
   },
+  {
+    key:'p4',
+    title: "4th pro",
+    image: "#",
+    lang: ["#ReactJS", "#NodeJS", "#ExpressJS", "#MongoDB", "#framerMotion", '#JWT'],
+    link:{
+      live:"live",
+      source:"src"
+    },
+    deacription:"project deacription this should be long"
+  },
 ];
 export default projectData;
