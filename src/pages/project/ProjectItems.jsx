@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, Suspense, lazy } from "react";
 import {
   motion,
   useScroll,
@@ -12,6 +12,9 @@ import {
 } from "framer-motion";
 import { TERipple } from "tw-elements-react";
 import { Parallax } from 'react-scroll-parallax';
+// const {SourceLink, LiveLink} = lazy(() => import('../../assets/Icons.jsx'));
+// const LiveLink = lazy(() => import('../../assets/Icons.jsx'));
+import {SourceLink, LiveLink} from '../../assets/Icons.jsx';
 
 function ProjectItems(props) {
   
@@ -25,7 +28,6 @@ function ProjectItems(props) {
   const [opacity2, setOpacity2] = useState(0);
 
 
-
   const titleRef = useRef(null);
   const isInView = useInView(titleRef);
 
@@ -36,7 +38,8 @@ function ProjectItems(props) {
   useEffect(() => {
     if (spanInView) {
       tagSpan.current.classList.add("tagEnter");
-      console.log(tagSpan.current.children[0])
+      
+      console.log(tagSpan.current.children[0].textContent)
     } else {
       tagSpan.current.classList.remove("tagEnter");
     }
@@ -92,7 +95,7 @@ function ProjectItems(props) {
   };
   
   const containerRef = useRef(null);
-  
+
   const containerView = useInView(containerRef,{
     margin: "0px 0px -70% 0px"
   });
@@ -102,10 +105,6 @@ const conOnclick = ()=>{
     console.log("in view");
   }else{
     console.log("not in view");
-    // containerRef.current.scrollTo({
-    //   x:0,
-    //   y:'-100%'
-    // });
     containerRef.current.scrollIntoView({behavior:"smooth", block: "center", inline:"nearest"});
   }
 }
@@ -163,8 +162,20 @@ const conOnclick = ()=>{
               </motion.div>
             </motion.div>
             <div className="link">
-              <div className="liveLink">{props.link.live}</div>
-              <div className="sourceCode">{props.link.source}</div>
+              <div className="liveLink">
+              <a target='_blank' id='live' href={props.link.live}>
+              live
+              <LiveLink/>
+              </a>
+              </div>
+              <div className="sourceCode">
+             {/* <Suspense fallback={<span>...</span>}>*/}
+             <a target='_blank' href={props.link.source}>
+              source
+              <SourceLink/>
+              </a>
+             {/* </Suspense>*/}
+              </div>
             </div>
           </div>
           <div className="projectDiscription">

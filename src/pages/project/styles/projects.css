@@ -3,15 +3,22 @@
   height: 80vmin;
   overflow-y: scroll;
   /* overflow-y: visible; */
-  overflow-x: visible !important;
+  overflow-x: hidden !important;
   scroll-snap-type: y mandatory;
   box-shadow: 0 -20px 5px #000000 inset;
+  scrollbar-width: none;
+  /* filter: blur(0); */
+}
+.allProjects::-webkit-scrollbar{
+  background: red;
+  display: none;
 }
 .ProjectContainer{
   scroll-snap-align: start;
   margin: 4% 0 0 0;
   width: 80vw;
   height: 70vmin;
+  /* height: 76vmin; */
   /* border: 1px solid green; */
   display: flex;
   flex-direction: row;
@@ -26,6 +33,7 @@
   height: 35vmin;
   background: grey;
   position: relative;
+  z-index: 50;
   /* overflow-y: scroll; */
 }
 .projectDetaills{
@@ -52,6 +60,7 @@
   gap: 10px;
   /* border: 1px solid red; */
   margin: 5%;
+  text-align: center;
 }
 @keyframes scale {
   100% {
@@ -64,12 +73,15 @@
 
   /* box-shadow: 20px 0 0 grey inset; */
 }
-.langScroll span{
+.langScroll .tagSpan{
   margin: 0 5px;
   font-size: 0.8rem;
   filter: blur(4px);
   display: inline-block;
   opacity: 0;
+}
+.tagSpan{
+  display: flex;
 }
 .langScroll span:hover{
   text-shadow: 0 0 5px white;
@@ -147,13 +159,65 @@
   margin: 5% 25%;
   gap: 10px;
   overflow: scroll;
+  /* border: 1px solid red; */
+}
+.link a{
+  color: grey;
+  display: flex;
+  webkit-tap-highlight-color: none;
+  text-decoration: none;
+}
+.link a:active{
+  webkit-tap-highlight-color: none;
+}
+.link a:hover{
+  cursor: pointer;
+}
+.link svg{
+  fill: grey;
+  transition: 0.8s ease all;
+}
+.liveLink{
+  display: flex;
+}
+.liveLink svg:hover{
+  fill: blue;
+}
+.sourceCode{
+  display: flex;
+}
+.sourceCode svg{
+  width: 80%;
+}
+.sourceCode svg:hover{
+  fill: #240039;
 }
 .projectDiscription{
-  overflow: hidden;
   width: 90%;
   color: white;
   /* border: 1px solid pink; */
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
+  overflow: hidden;
+  
+}
+.deacriptionText{
+  /* border: 1px solid red; */
+  padding: 5%;
+  transform: translateY(-10%);
+  text-align: center;
+  height: 50%;
+  overflow: scroll;
+  text-wrap: normal;
+  transition: 0.8s ease all;
+  scrollbar-width: none;
+}
+.deacriptionText::-webkit-scrollbar{
+  background: red;
+  display: none;
+}
+.deacriptionText:hover{
+  text-shadow: 0 0 4px #fff;
+  padding: 0 5% 5% 5%;
 }
 .middleLines{
   width: 80%;
@@ -219,15 +283,27 @@
 
 .nextItem{
   width: 10%;
-  height: 10%;
+  height: 6.5%;
   background: #5e5e5e;
   color: black;
   position: absolute;
-  bottom: 5%;
+  bottom: 8%;
   right: 10%;
   transition: 0.8s ease all;
   border-radius: 4px;
 }
 .nextItem:hover{
   background: #755538;
+}
+@media only screen and (max-width: 400px) {
+  .deacriptionText{
+    display: none;
+  }
+  .link{
+    height: 15%;
+    width: 100%;
+    padding: 0 2% 0.5% 0.5%;
+    overflow: visible;
+  }
+  
 }

@@ -5,19 +5,25 @@ import {
   useInView,
   motionValue,
   useTransform,
+  useVelocity,
+  useSpring,
   useScroll,
   useMotionValueEvent,
-  useViewportScroll
+  useViewportScroll,
+  useMotionValue
 } from "framer-motion";
 import { ParallaxProvider } from "react-scroll-parallax";
 
 import "./styles/projects.css";
 import ProjectItems from "./ProjectItems.jsx";
 import projectData from "./ProjectData.jsx";
+import useElementScrollVelocity from '../../hook/ScrollVelocity.jsx';
 
 function Projects() {
   const mainRef = React.useRef(null);
 
+const pink = (saturation) => `hsl(327, ${saturation}%, 50%)`;
+const blur = (blur) => `blur(${blur||0}px)`;
   /*const scrollY = motionValue(0); // Create a MotionValue for scroll position
 
   const controls = useAnimation();
@@ -47,30 +53,78 @@ function Projects() {
   });*/
 
   const { scrollY } = useScroll({
-    target: mainRef.current
+    target: mainRef
   });
   const y1 = useTransform(scrollY, [0, 300], [0, 200]);
   const y2 = useTransform(scrollY, [0, 300], [0, -100]);
 
 
-  const [targetElement, setElement] = useState();
+ /* const [targetElement, setElement] = useState();
   useEffect(() => {
     setElement(mainRef.current);
   }, []);
+  */
+  
+  const baseX = useMotionValue(0);
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 400
+  });
+
+  
+  
+const y = useMotionValue(0);
+
+  const ySmooth = useSpring(y, { damping: 50, stiffness: 400 });
+  // const yVelocity = useVelocity(scrollY);
+  const yVelocity = useElementScrollVelocity(mainRef);
+  const scale = useTransform(yVelocity, [-3000, 0, 3000], [2, 1, 2], {
+    clamp: false
+  });
+
+  const backgroundColor = useTransform(
+    yVelocity,
+    [-2000, 0, 2000],
+    [pink(100), pink(0), pink(100)]
+  );
+  let filter = useTransform(
+    yVelocity,
+    [-2000, 0, 2000],
+    [blur(50), blur(0), blur(50)]
+  );
+
+useMotionValueEvent(scrollY, "change", (latest) => {
+  console.log('hhh '+ latest)
+})
+
+/*drag="y"
+      dragElastic={1}
+      dragConstraints={{ left: -200, right: 200 }}
+      style={{ x, scale, backgroundColor }}*/
   return (
-      <div className="allProjects" ref={mainRef}>
-        {projectData.map(data => (
-          <ProjectItems
+      <motion.div className="allProjects" ref={mainRef} style={{ filter,trasition:'1s ease all'}}
+      >
+        {projectData.map(data => {
+          const langKey = data.lang.map((tags) => { 
+            const tag = tags.split('');
+            return (
+              <>
+              <span style={{color:'red',margin:0}}>{tag[0]}</span><span>{tag.slice(1).join('')}</span>
+              </>
+              )
+          })
+         return( <ProjectItems
             key={data.key}
             image={data.image}
             title={data.title}
             deacription={data.deacription}
             link={data.link}
-            lang={data.lang}
+            lang={langKey}
             y1={y2}
-          />
-        ))}
-      </div>
+          />)
+        })}
+      </motion.div>
   );
 }
 
