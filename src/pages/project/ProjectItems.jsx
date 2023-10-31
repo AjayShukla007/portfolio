@@ -163,14 +163,14 @@ const conOnclick = ()=>{
             </motion.div>
             <div className="link">
               <div className="liveLink">
-              <a target='_blank' id='live' href={props.link.live}>
+              <a target='_blank' id='live' href={props.live}>
               live
               <LiveLink/>
               </a>
               </div>
               <div className="sourceCode">
              {/* <Suspense fallback={<span>...</span>}>*/}
-             <a target='_blank' href={props.link.source}>
+             <a target='_blank' href={props.source}>
               source
               <SourceLink/>
               </a>
