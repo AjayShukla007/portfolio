@@ -29,7 +29,11 @@ const fetcher = async () => {
       authToken: `${head}`
     };
     const res = await axios.get(getProjectUrl, { headers });
-    return res.data;
+    return res.data.sort((a, b) => {
+      if (a.grade < b.grade) return -1;
+      if (a.grade > b.grade) return 1;
+      return 0;
+    });
   }
 };
 
@@ -125,7 +129,7 @@ function Projects() {
   });
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
-  console.log(data);
+  // console.log(data);
   /*drag="y"
       dragElastic={1}
       dragConstraints={{ left: -200, right: 200 }}
@@ -136,7 +140,7 @@ function Projects() {
       ref={mainRef}
       style={{ filter, trasition: "1s ease all" }}
     >
-      {data.map(data => {
+      {data?data.map(data => {
         const langKey = data.tags.split(' ').map(tags => {
           const tag = tags.split("");
           return (
@@ -158,7 +162,7 @@ function Projects() {
             y1={y2}
           />
         );
-      })}
+      }):"..."}
     </motion.div>
   );
 }
