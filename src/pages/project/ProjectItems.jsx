@@ -12,6 +12,8 @@ import {
 } from "framer-motion";
 import { TERipple } from "tw-elements-react";
 import { Parallax } from 'react-scroll-parallax';
+import DOMPurify from 'dompurify';
+
 // const {SourceLink, LiveLink} = lazy(() => import('../../assets/Icons.jsx'));
 // const LiveLink = lazy(() => import('../../assets/Icons.jsx'));
 import {SourceLink, LiveLink} from '../../assets/Icons.jsx';
@@ -39,7 +41,7 @@ function ProjectItems(props) {
     if (spanInView) {
       tagSpan.current.classList.add("tagEnter");
       
-      console.log(tagSpan.current.children[0].textContent)
+      // console.log(tagSpan.current.children[0].textContent)
     } else {
       tagSpan.current.classList.remove("tagEnter");
     }
@@ -99,7 +101,8 @@ function ProjectItems(props) {
   const containerView = useInView(containerRef,{
     margin: "0px 0px -70% 0px"
   });
-  
+  const image = props.image;
+  const cleanImage = DOMPurify.sanitize(image);
 const conOnclick = ()=>{
   if(containerView){
     console.log("in view");
@@ -131,10 +134,16 @@ const conOnclick = ()=>{
         targetElement={targetElement}
           animate={controls}
         >*/}
-          <motion.div style={{y:containerView?'0px':'-100px', transition:'0.5s ease all' }} className="projectImage" 
+          <motion.div style={{
+            y:containerView?'0px':'-100px', 
+            transition:'0.5s ease all',
+            display:'flex',
+            justifyContent:"center",
+            alignItems:'center'
+          }} className="projectImage" 
           animate={{ y: props.scrollPosition }}
           >
-            <img src={props.image} alt="projectImage"/>
+      <div dangerouslySetInnerHTML={{ __html: cleanImage }} />
           </motion.div>
       {/*</Parallax>*/}
           <div className="projectDetaills">
@@ -200,7 +209,7 @@ const conOnclick = ()=>{
               ></div>
             </div>
             <div className="deacriptionText">
-              {props.deacription}
+              {props.description}
             </div>
             <div className="nextItem">
               case studies

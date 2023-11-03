@@ -31,10 +31,22 @@
   display: inline-block;
   width: 35vmin;
   height: 35vmin;
-  background: grey;
+  background: #4b4b4b;
   position: relative;
   z-index: 50;
   /* overflow-y: scroll; */
+}
+.projectImage div{
+  width: 100%;
+  height: 100%;
+  font-size: 200%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projectImage svg{
+  width: 100%;
+  height: 100%;
 }
 .projectDetaills{
   color: white;

@@ -38,19 +38,6 @@ const fetcher = async () => {
 };
 
 function Projects() {
-  // const parseData = () => {
-  //   const { data, isLoading, error } = useQuery("projectsData", fetcher);
-  //   if (isLoading) return "Loading...";
-  //   if (error) return "An error has occurred: " + error.message;
-  //   const parsedData = [];
-  //   data
-  //     ? data.map(data => {
-  //         parsedData.push(data);
-  //       })
-  //     : "...";
-  //   return parsedData;
-  // };
-  // parseData()
 
   const { data, isLoading, error } = useQuery("projectsData", fetcher);
 
@@ -155,7 +142,7 @@ function Projects() {
             key={data.title}
             image={data.image}
             title={data.title}
-            deacription={data.description}
+            description={data.description}
             link={data.link}
             source={data.source}
             lang={langKey}
