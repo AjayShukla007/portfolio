@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useRef } from "react";
 import Particles from "react-particles";
 //import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "tsparticles-slim"; // if you are going to use `loadSlim`, install the "tsparticles-slim" package too.
@@ -7,6 +7,7 @@ function Name() {
   return <h1 className="Name">Ajay Shukla</h1>;
 }
 function Particle() {
+  
   const particlesInit = useCallback(async engine => {
     // console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -22,6 +23,7 @@ function Particle() {
 
   return (
     <>
+    <canvas id="canvas" ref={canvasRef}></canvas>
       <Particles
         id="tsparticles"
         width="200px"

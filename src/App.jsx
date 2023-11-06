@@ -10,9 +10,12 @@ import { QueryClient, QueryClientProvider } from "react-query";
 //COMPONENTS
 import Nav from "./components/Nav/Nav.jsx";
 import Contact from "./components/Contact/Contact.jsx";
+
+//PAGES
 import Home from "./pages/home/Home.jsx";
 import Projects from "./pages/project/Projects.jsx";
-// import MyComponent from './exp/svgAni1.jsx'
+import Blog from './pages/blogs/Blog.jsx';
+
 //STYLING
 import "./App.css";
 
@@ -49,7 +52,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/project" element={<Projects />} />
-        <Route exact path="/blog" element={<h1>blog</h1>} />
+        <Route exact path="/blog" element={<Blog/>} />
         <Route exact path="/test" element={<h1>test</h1>} />
         <Route exact path="/cert" element={<h1>cert</h1>} />
       </Routes>
