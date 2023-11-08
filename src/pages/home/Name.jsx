@@ -23,7 +23,6 @@ function Particle() {
 
   return (
     <>
-    <canvas id="canvas" ref={canvasRef}></canvas>
       <Particles
         id="tsparticles"
         width="200px"

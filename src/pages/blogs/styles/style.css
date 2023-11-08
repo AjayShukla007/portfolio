@@ -29,6 +29,28 @@
   height: 3em;
   width: 100%;
 }
+.allBlogs input:focus{
+  outline: none;
+}
+.base-input3:focus {
+  border-color: #e47320;
+}
+.overlay-input3 {
+  /* touch-action: none; */
+  pointer-events: none;
+  /* position: absolute; */
+  /* background: red; */
+  /* color: #fff; */
+  border-radius: 20px;
+  padding: 0 1.5em;
+  transition: 0.8s ease all;
+  height: 3em;
+  width: 89%;
+  opacity: 1;
+  z-index: 15;
+  transform: translateY(-100%);
+}
+
 .searchPlaseHolder{
   background: transparent;
   color: grey;
@@ -36,7 +58,7 @@
   width: 100%;
   padding: 0 1.5em;
   transition: 0.8s ease all;
-  transform: translateY(-3em);
+  transform: translateY(-6em);
   touch-action: none;
   border-radius: 20px;
   pointer-events: none;
@@ -57,7 +79,7 @@
   align-items: center;
 }
 .placeText{
-  /* border: 1px solid red; */;
+  /* border: 1px solid red; */
   padding: 0;
 }
 .blogs{
@@ -73,6 +95,7 @@
   position: relative;
   overflow: scroll;
   scrollbar-width: none;
+  transition: 0.8s ease all;
   
 }
 .blogs::-webkit-scrollbar{
@@ -107,7 +130,12 @@
   font-size: 1.2em;
   transform: translateY(-150%);
   color: #0052ab;
+  webkit-tap-highlight-color: red;
   /* background: red; */
+}
+.blogDetaill a:active{
+  font-size: 1.3em;
+  webkit-tap-highlight-color: red;
 }
 .blogTags{
   text-align: center;

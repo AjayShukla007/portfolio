@@ -1,10 +1,9 @@
-import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
 import { useQuery } from "react-query";
 import axios from "axios";
 
 import BlogItems from "./BlogItems.jsx";
-import LineBorder from '../../components/Interactive/LineBorder.jsx';
 import "./styles/style.css";
 
 const getBlogsUrl = import.meta.env.VITE_API_GET_BLOG;
@@ -51,14 +50,14 @@ function Blog() {
   const [blur, setBlur] = useState(true);
   const [change, setChange] = useState(true);
   // transform:'translate(300%, 0)'
-  const handleFocus = () => {
-    setBlur(false);
-  };
-  const handleBlur = e => {
-    if (e.target.value.length < 1) {
-      setBlur(true);
-    }
-  };
+  // const handleFocus = () => {
+  //   setBlur(false);
+  // };
+  // const handleBlur = e => {
+  //   if (e.target.value.length < 1) {
+  //     setBlur(true);
+  //   }
+  // };
   const handleOnChange = e => {
     const searchText = e.target.value;
     setSearch(searchText);
@@ -106,22 +105,86 @@ function Blog() {
       opacity: [0.5, 1]
     }
   };
+  
+  const divRef = useRef(null);
+  const [isFocused, setIsFocused] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [opacity, setOpacity] = useState(0);
+  
+  const handleMouseMove = e => {
+    if (!divRef.current || isFocused) return;
+
+    const div = divRef.current;
+    const rect = div.getBoundingClientRect();
+
+    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  const handleFocus = () => {
+    setIsFocused(true);
+    setOpacity(1);
+    setBlur(false);
+  };
+
+  const handleBlur = (e) => {
+    setIsFocused(false);
+    setOpacity(0);
+    if (e.target.value.length < 1) {
+      setBlur(true);
+    }
+  };
+
+  const handleMouseEnter = () => {
+    setOpacity(1);
+  };
+
+  const handleMouseLeave = () => {
+    setOpacity(0);
+  };
+
+  
+const [index, setIndex] = useState(0);
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
+    setIndex((index + 1) % data.length);
+  };
+  
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, [index, data]);
+  
+  
   // transition: {
   //   ease: "linear",
   //   duration: 2
   // }
   return (
-    <div className="allBlogs">
-      <LineBorder/>
+    <motion.div 
+    className="allBlogs">
       <div className="searchBpx">
         <input
           type="search"
           name="search"
           id="search"
+          className="base-input3"
           value={search}
           onChange={handleOnChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          onMouseMove={handleMouseMove}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
+        <input
+          ref={divRef}
+          style={{
+            border: "1px solid rgb(228, 115, 32)",
+            opacity,
+            WebkitMaskImage: `radial-gradient(30% 30px at ${position.x}px ${position.y}px, black 45%, transparent)`
+          }}
+          aria-hidden="true"
+          className="overlay-input3"
         />
         <div ref={placeholderRef} className="searchPlaseHolder">
           <motion.span animate={blur ? "back" : "go"} variants={varients1}>
@@ -159,7 +222,7 @@ function Blog() {
               highlight={search}
             />
           )):""}
-    </div>
+    </motion.div>
   );
 }
 /*title={element.title}
