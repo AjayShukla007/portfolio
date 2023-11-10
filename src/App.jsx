@@ -15,7 +15,7 @@ import Contact from "./components/Contact/Contact.jsx";
 import Home from "./pages/home/Home.jsx";
 import Projects from "./pages/project/Projects.jsx";
 import Blog from './pages/blogs/Blog.jsx';
-
+import About from './pages/about/About.jsx';
 //STYLING
 import "./App.css";
 
@@ -54,7 +54,7 @@ function App() {
         <Route exact path="/project" element={<Projects />} />
         <Route exact path="/blog" element={<Blog/>} />
         <Route exact path="/test" element={<h1>test</h1>} />
-        <Route exact path="/cert" element={<h1>cert</h1>} />
+        <Route exact path="/cert" element={<About/>} />
       </Routes>
       </QueryClientProvider>
       {/*<div style={bgStyle} className="bg">

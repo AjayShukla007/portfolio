@@ -1,0 +1,36 @@
+.aboutContainer{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  position: absolute;
+  left: 0;
+  /* background: red; */
+  flex-direction: column;
+}
+.tag-cloud {
+  cursor: pointer;
+  margin-left: 0;
+  margin-top: 100px;
+  position: relative;
+  overflow: hidden;
+  webkit-tap-highlight-color: none;
+  width: 100vmin;
+  height: 100vmin;
+  color: white;
+}
+
+.tag-cloud__item {
+  font-weight: 800;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform-origin: 50% 50%;
+  transition: all 0.4s;
+  will-change: transform, opacity, filter;
+  
+}
+.tag-cloud__item:hover{
+  /* color: red; */
+  scale: 1.1;
+  transform: scale(1.1);
+}
