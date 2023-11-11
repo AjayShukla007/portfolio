@@ -1,5 +1,8 @@
 import Skills from './Skills.jsx';
+import Edu from './Education.jsx';
+
 import './styles/about.css';
+
 function About() {
   return (
   <div className="aboutContainer">
