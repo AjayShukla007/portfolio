@@ -5,7 +5,7 @@ import axios from "axios";
 
 import BlogItems from "./BlogItems.jsx";
 import "./styles/style.css";
-
+import BlogsPreload from '../../components/PreLoaders/Blogs.jsx';
 const getBlogsUrl = import.meta.env.VITE_API_GET_BLOG;
 
 
@@ -29,22 +29,6 @@ function Blog() {
 
   const [search, setSearch] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-  // const data = [
-  //   {
-  //     title: "this it blog title",
-  //     details:
-  //       "this is blog details after 5 lines there's one read more option that is the link to the original blog...read more",
-  //     tags: "#webdev #react #soOn",
-  //     date: "2023/8/23"
-  //   },
-  //   {
-  //     title: "this it blog title 2 the second blog",
-  //     details:
-  //       "this is blog details after 5 lines there's one read more option that is the link to the original blog...read more",
-  //     tags: "#webdev #node #express #react #soOn",
-  //     date: "2023/10/28"
-  //   }
-  // ];
   const placeholderRef = useRef(null);
   const [placeholderText, setPlaceholderText] = useState("Search");
   const [blur, setBlur] = useState(true);
@@ -221,15 +205,16 @@ useEffect(() => {
               link={element.link}
               highlight={search}
             />
-          )):""}
+          )):(
+            <>
+            <BlogsPreload/>
+            <BlogsPreload/>
+            <BlogsPreload/>
+            </>
+            )}
     </motion.div>
   );
 }
-/*title={element.title}
-          date={element.date}
-          details={element.details}
-          tags={element.tags}
-          link={element.link}*/
 export default Blog;
 
 
