@@ -1,4 +1,3 @@
-//VITE_API_GET_Projects=https://AjayShukla-api.onrender.com/api/project/getProject
 const getProjectUrl = import.meta.env.VITE_API_GET_Projects;
 const authUrl = import.meta.env.VITE_API_AUTH;
 const conf1 = import.meta.env.VITE_API_USER;

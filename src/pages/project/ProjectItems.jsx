@@ -11,7 +11,6 @@ import {
   useMotionValueEvent
 } from "framer-motion";
 import { TERipple } from "tw-elements-react";
-import { Parallax } from 'react-scroll-parallax';
 import DOMPurify from 'dompurify';
 
 // const {SourceLink, LiveLink} = lazy(() => import('../../assets/Icons.jsx'));
@@ -99,15 +98,15 @@ function ProjectItems(props) {
   const containerRef = useRef(null);
 
   const containerView = useInView(containerRef,{
-    margin: "0px 0px -70% 0px"
+    margin: "0px 0px -50% 0px"
   });
   const image = props.image;
   const cleanImage = DOMPurify.sanitize(image);
 const conOnclick = ()=>{
   if(containerView){
-    console.log("in view");
+    // console.log("in view");
   }else{
-    console.log("not in view");
+    // console.log("not in view");
     containerRef.current.scrollIntoView({behavior:"smooth", block: "center", inline:"nearest"});
   }
 }
@@ -130,10 +129,6 @@ const conOnclick = ()=>{
           ref={containerRef}
           onClick={()=>conOnclick()}
         >
-       {/* <Parallax speed={-20} translateY={20}
-        targetElement={targetElement}
-          animate={controls}
-        >*/}
           <motion.div style={{
             y:containerView?'0px':'-100px', 
             transition:'0.5s ease all',
@@ -145,7 +140,6 @@ const conOnclick = ()=>{
           >
       <div dangerouslySetInnerHTML={{ __html: cleanImage }} />
           </motion.div>
-      {/*</Parallax>*/}
           <div className="projectDetaills">
             <div
               ref={titleRef}
@@ -211,9 +205,9 @@ const conOnclick = ()=>{
             <div className="deacriptionText">
               {props.description}
             </div>
-            <div className="nextItem">
+            {/*<div className="nextItem">
               case studies
-            </div>
+            </div>*/}
           </div>
         </motion.div>
         <div
@@ -221,7 +215,8 @@ const conOnclick = ()=>{
           style={{
             border: "1px solid rgb(228, 115, 32)",
             opacity,
-            WebkitMaskImage: `radial-gradient(30% 30px at ${position.x}px ${position.y}px, black 45%, transparent)`
+            WebkitMaskImage: `radial-gradient(30% 30px at ${position.x}px ${position.y}px, black 45%, transparent)`,
+            filter:containerView?'blur(0px)':'blur(20px)',
           }}
           aria-hidden="true"
           className="overlay-input"

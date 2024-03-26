@@ -1,6 +1,8 @@
-.allProjects{
+.allProjects {
   /* border: 1px solid red; */
-  height: 80vmin;
+  /* height: 80vmin; */
+  height: 70vh;
+  width: 100vw;
   overflow-y: scroll;
   /* overflow-y: visible; */
   overflow-x: hidden !important;
@@ -9,11 +11,11 @@
   scrollbar-width: none;
   /* filter: blur(0); */
 }
-.allProjects::-webkit-scrollbar{
+.allProjects::-webkit-scrollbar {
   background: red;
   display: none;
 }
-.ProjectContainer{
+.ProjectContainer {
   scroll-snap-align: start;
   margin: 4% 0 0 0;
   width: 80vw;
@@ -26,7 +28,7 @@
   /* overflow: hidden; */
   overflow-x: visible;
 }
-.projectImage{
+.projectImage {
   /* border: 1px solid red; */
   display: inline-block;
   width: 35vmin;
@@ -35,9 +37,10 @@
   /* background: #4b4b4b; */
   position: relative;
   z-index: 50;
+  border-top-left-radius: 10px;
   /* overflow-y: scroll; */
 }
-.projectImage div{
+.projectImage div {
   width: 100%;
   height: 100%;
   font-size: 200%;
@@ -46,11 +49,11 @@
   justify-content: center;
   align-items: center;
 }
-.projectImage svg{
+.projectImage svg {
   width: 100%;
   height: 100%;
 }
-.projectDetaills{
+.projectDetaills {
   color: #ffffff;
   /* border: 1px solid blue; */
   width: 44vw;
@@ -59,17 +62,17 @@
   /* flex-grow: 2; */
   text-align: right;
 }
-.projectTitle{
+.projectTitle {
   font-size: 2.5vmax;
   padding: 4% 5% 0 0;
 }
-.projectTitle h1{
+.projectTitle h1 {
   font-size: 1.5em;
   margin: 0;
 }
-.projectLang{
+.projectLang {
   display: flex;
-  justify-content:  flex-start;
+  justify-content: flex-start;
   overflow: scroll;
   gap: 10px;
   /* border: 1px solid red; */
@@ -81,23 +84,23 @@
     transform: scale(1);
   }
 }
-.langScroll{
+.langScroll {
   display: inline-block;
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
 
   /* box-shadow: 20px 0 0 grey inset; */
 }
-.langScroll .tagSpan{
+.langScroll .tagSpan {
   margin: 0 5px;
   font-size: 0.8rem;
   filter: blur(4px);
   display: inline-block;
   opacity: 0;
 }
-.tagSpan{
+.tagSpan {
   display: flex;
 }
-.langScroll span:hover{
+.langScroll span:hover {
   text-shadow: 0 0 5px #ffffff;
 }
 .tagEnter span:nth-child(1) {
@@ -162,12 +165,10 @@
   }
 }
 
-
 /*Resources
 */
 
-
-.link{
+.link {
   display: flex;
   justify-content: flex-end;
   margin: 5% 25%;
@@ -175,46 +176,45 @@
   overflow: scroll;
   /* border: 1px solid red; */
 }
-.link a{
+.link a {
   color: grey;
   display: flex;
-  webkit-tap-highlight-color: none;
+  /* webkit-tap-highlight-color: none; */
   text-decoration: none;
 }
-.link a:active{
+/* .link a:active {
   webkit-tap-highlight-color: none;
-}
-.link a:hover{
+} */
+.link a:hover {
   cursor: pointer;
 }
-.link svg{
+.link svg {
   fill: #808080;
   transition: 0.8s ease all;
 }
-.liveLink{
+.liveLink {
   display: flex;
 }
-.liveLink svg:hover{
+.liveLink svg:hover {
   fill: #0000ff;
 }
-.sourceCode{
+.sourceCode {
   display: flex;
 }
-.sourceCode svg{
+.sourceCode svg {
   width: 80%;
 }
-.sourceCode svg:hover{
+.sourceCode svg:hover {
   fill: #240039;
 }
-.projectDiscription{
+.projectDiscription {
   width: 90%;
   color: #ffffff;
   /* border: 1px solid pink; */
   /* transform: translateY(-50%); */
   overflow: hidden;
-  
 }
-.deacriptionText{
+.deacriptionText {
   /* border: 1px solid red; */
   padding: 5%;
   transform: translateY(-10%);
@@ -225,21 +225,21 @@
   transition: 0.8s ease all;
   scrollbar-width: none;
 }
-.deacriptionText::-webkit-scrollbar{
+.deacriptionText::-webkit-scrollbar {
   background: red;
   display: none;
 }
-.deacriptionText:hover{
+.deacriptionText:hover {
   text-shadow: 0 0 4px #fff;
   padding: 0 5% 5% 5%;
 }
-.middleLines{
+.middleLines {
   width: 80%;
   margin: 0 5%;
   overflow: hidden !important;
   /* border: 1px solid red; */
 }
-.saparatorLine{
+.saparatorLine {
   width: 100%;
   height: 1px;
   margin: 0 0 5% 0;
@@ -295,7 +295,7 @@
   transition: opacity 0.5s;
 }
 
-.nextItem{
+.nextItem {
   width: 10%;
   height: 6.5%;
   background: #5e5e5e;
@@ -306,18 +306,17 @@
   transition: 0.8s ease all;
   border-radius: 4px;
 }
-.nextItem:hover{
+.nextItem:hover {
   background: #755538;
 }
-@media only screen and (max-width: 400px) {
-  .deacriptionText{
+@media only screen and (max-width: 450px) {
+  .deacriptionText {
     display: none;
   }
-  .link{
+  .link {
     height: 15%;
     width: 100%;
     padding: 0 2% 0.5% 0.5%;
     overflow: visible;
   }
-  
 }

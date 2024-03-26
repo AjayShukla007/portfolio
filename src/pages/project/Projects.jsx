@@ -9,10 +9,8 @@ import {
   useSpring,
   useScroll,
   useMotionValueEvent,
-  useViewportScroll,
   useMotionValue
 } from "framer-motion";
-import { ParallaxProvider } from "react-scroll-parallax";
 import { useQuery } from "react-query";
 import axios from "axios";
 
@@ -20,6 +18,7 @@ import "./styles/projects.css";
 import ProjectItems from "./ProjectItems.jsx";
 import projectData from "./ProjectData.jsx";
 import useElementScrollVelocity from "../../hook/ScrollVelocity.jsx";
+import ProjectsPreload from '../../components/PreLoaders/ProjectsPreload.jsx';
 const getProjectUrl = import.meta.env.VITE_API_GET_Projects;
 
 const fetcher = async () => {
@@ -49,7 +48,7 @@ function Projects() {
   const controls = useAnimation();
   const updateScrollY = () => {
       scrollY.set(-mainRef.current.getBoundingClientRect().top);
-      console.log("hey ji");
+      //console.log("hey ji");
     };
   // useEffect(() => {
   //   // Update scrollY value based on containerRef's top position
@@ -111,11 +110,11 @@ function Projects() {
     [blur(50), blur(0), blur(50)]
   );
 
-  useMotionValueEvent(scrollY, "change", latest => {
-    console.log("hhh " + latest);
-  });
-  if (isLoading) return "Loading...";
-  if (error) return "An error has occurred: " + error.message;
+  // useMotionValueEvent(scrollY, "change", latest => {
+  //   console.log(backgroundColor);
+  // });
+  // if (isLoading) return "Loading...";
+  // if (error) return "An error has occurred: " + error.message;
   // console.log(data);
   /*drag="y"
       dragElastic={1}
@@ -125,7 +124,7 @@ function Projects() {
     <motion.div
       className="allProjects"
       ref={mainRef}
-      style={{ filter, trasition: "1s ease all" }}
+      style={{ filter, transition: "1s ease all" }}
     >
       {data?data.map(data => {
         const langKey = data.tags.split(' ').map(tags => {
@@ -149,7 +148,11 @@ function Projects() {
             y1={y2}
           />
         );
-      }):"..."}
+      }):(<>
+      <ProjectsPreload/>
+      <ProjectsPreload/>
+      <ProjectsPreload/>
+      </>)}
     </motion.div>
   );
 }
