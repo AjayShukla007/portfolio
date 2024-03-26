@@ -6,4 +6,4 @@
 ### projects
 ### blog
 ### case studies -working
-### About -under progress 
+### About 

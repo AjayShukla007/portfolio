@@ -1,9 +1,10 @@
 import {useEffect} from 'react';
 import { TypeAnimation } from "react-type-animation";
 import "./styles/home.css";
-import {Name, Particle} from "./Name.jsx";
+import {Name} from "./Name.jsx";
 import Icon from './Icons.jsx';
 import Motivation from './Motivation.jsx';
+import QuotesHome from '../../components/Quotes/Quotes1.jsx';
 
 function Home() {
 useEffect(() => {
@@ -39,8 +40,10 @@ useEffect(() => {
       <div className="icons">
         <Icon/>
       </div>
+      <div className="quote1">
+        <QuotesHome/>
+      </div>
       <div className="homeBackground">
-       <Particle/>
       </div>
     </div>
   );

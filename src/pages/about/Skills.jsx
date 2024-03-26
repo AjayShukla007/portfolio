@@ -1,62 +1,9 @@
 import { useRef, useEffect, useState, useCallback, memo } from "react";
 
-const texts = [
-  "React",
-  "GraphQL",
-  "TypeScript",
-  "JavaScript",
-  "CSS",
-  "NodeJS",
-  "Express",
-  "JWT",
-  "HTML",
-  "Git",
-  "Render",
-  "Vercel",
-  "Pug",
-  "API",
-  "jest",
-  "Redux",
-  "REST",
-  "Mongoose",
-  "Firebase",
-  "Multer",
-  "Postman",
-  "SASS",
-  "AWS",
-  "Linux"
-];
-const textColor = [
-  "#61DBFB",
-  "#e535ab",
-  "#007acc",
-  "#F0DB4F",
-  "#2965f1",
-  "#68a063",
-  "#474747",
-  "#1b3353",
-  "#e34c26",
-  "#e44d00",
-  "#00eedcb8",
-  "#ffffff",
-  "#432100",
-  "#4e97ff",
-  "#00e408",
-  "#764abc",
-  "#b200c2",
-  "#A58B6F",
-  "#FFA611",
-  "#68a063",
-  "EF5B25",
-  "#cc6699",
-  "#252F3E",
-  "#0088e4",
-  ]
-// const skills = [
-//   {skill:(<span style={{color:'blue'}}>ReactJS</span>)},
-//   {skill:(<span style={{color:'gold'}}>MERN</span>)},
-//   {skill:(<span style={{color:'green'}}>NodeJS</span>)},
-//   ]
+const Skills = memo((props) => {
+  
+const texts = props.skills.split(',');
+const textColor = props.color.split(',');
 const computePosition = (idx, random = false, size) => {
   if (random) idx = Math.floor(Math.random() * (texts.length + 1));
 
@@ -84,7 +31,6 @@ const createTag = (idx, text, size) => {
   };
 };
 
-
 const createInitialState = size => {
   return texts.map((text, i) => {
     return createTag(i, text, size);
@@ -101,7 +47,7 @@ const { radius, maxSpeed, initSpeed, direction } = {
 const size = 1.5 * radius;
 const depth = 2 * radius;
 
-const Skills = memo(() => {
+  
   const tagCloudRef = useRef(null);
   const [items, setItems] = useState(createInitialState(size));
 

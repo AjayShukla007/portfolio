@@ -2,6 +2,7 @@
   /* border: 2px solid grey; */
   width: 100vw;
   height: 90vh;
+  /* height: 95vh; */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -38,10 +39,6 @@
   height: 50px;
 }
 .homeBackground {
-  width: 200px;
-  height: 200px;
-}
-#tsparticles {
   width: 200px;
   height: 200px;
 }
@@ -156,3 +153,14 @@
   animation: draw 10s linear forwards;
 } */
 
+.quote1{
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  z-index: 20;
+  /* border: 1px solid red; */
+  /* width: max(100%,20em); */
+  width:clamp(288px,100%,18em);
+  height:clamp(28px,100%,4em);
+  font-size: clamp(1rem,4vh,2rem);
+}
