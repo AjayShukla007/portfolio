@@ -4,6 +4,6 @@
 
 ### Home
 ### projects
-### blog -working
-### case studies -under progress
+### blog
+### case studies -working
 ### About -under progress 
