@@ -11,15 +11,15 @@ function Nav() {
 
   const handleLinkClick = linkId => {
     setActiveLink(linkId);
-    console.log(linkId);
+    // console.log(linkId);
   };
 
   const navItems = [
-    { p: "h", link: "/", tooltip:"Home" },
-    { p: "p", link: "/project", tooltip:"Project" },
-    { p: "b", link: "/blog", tooltip:"Blog" },
-    { p: "t", link: "/test", tooltip:"Test" },
-    { p: "c", link: "/cert", tooltip:"Cert" }
+    { p: "H", link: "/", tooltip:"Home" },
+    { p: "P", link: "/project", tooltip:"Project" },
+    { p: "B", link: "/blog", tooltip:"Blog" },
+    { p: "C", link: "/caseStudies", tooltip:"caseStudies" },
+    { p: "A", link: "/cert", tooltip:"Cert" }
   ];
 
   return (
