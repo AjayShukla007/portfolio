@@ -14,8 +14,7 @@ import {
   useSpring,
   useVelocity,
   useMotionValueEvent,
-  useMotionValue,
-  useViewportScroll
+  useMotionValue
 } from "framer-motion";
 import useElementScrollVelocity from "../../hook/ScrollVelocity.jsx";
 
