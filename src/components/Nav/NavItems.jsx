@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 // import { useDragControls } from "framer-motion";
 import { TERipple } from "tw-elements-react";
 import { useLocation, NavLink } from "react-router-dom";
-
+import { useTitleData } from '../context/csContext.jsx'
 import "./styles/navItems.css";
 const variants = {
   hover: {
@@ -19,14 +19,13 @@ const variants = {
 };
 
 function NavItems(props) {
-  const location = useLocation();
-React.useEffect(() => {
-  console.log(location.pathname);
-}, [location]);
+  
+  const { mailTo, setMailTo } = useTitleData();
+
   return (
     <div className="mainContainer ">
       {/*<NavLink to={props.link} className="navbar-logo rounded-full focus:outline-none" activeClassName="active" >*/}
-      <NavLink to={props.link} className={`navbar-logo rounded-full focus:outline-none ${({ isActive }) => isActive? "active": ''}`} >
+      <NavLink onClick={mailTo && setMailTo(false)} to={props.link} className={`navbar-logo rounded-full focus:outline-none ${({ isActive }) => isActive? "active": ''}`} >
         <TERipple
           rippleColor="light"
           rippleRadius={50}
@@ -60,7 +59,7 @@ export default NavItems;
 //               right: 0,
 //               bottom: 0
 //             }}
-/* 
+/* ₹ūñŪŚĀḌḌṆṁṇ,ṁḷ̥
   const dragControls = useDragControls();
 
   // Use animations for div one and div two
@@ -102,7 +101,7 @@ export default NavItems;
               // Update animations on drag
               // updateAnimations(info.point.x, info.point.y);
               updateAnimations(info.delta.x, info.delta.y);
-              console.log(info);
+              //console.log(info);
             }}
             onDragEnd={() => {
           // Reset animations when drag is released
