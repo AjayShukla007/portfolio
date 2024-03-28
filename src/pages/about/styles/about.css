@@ -248,8 +248,7 @@
   text-overflow: ellipsis;
   /* white-space: nowrap; */ /* Prevent text from wrapping */
   /* display: flex; */
-  /* justify-content: enter; */
- 
+  
 }
 .date{
   color: #655136;
