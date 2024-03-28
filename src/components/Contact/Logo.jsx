@@ -6,9 +6,11 @@ function Logo({ text }) {
 
   useEffect(() => {
     if (!varaRef.current) {
+      try{
       varaRef.current = new Vara(
         "#vara-container",
-        "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",
+        // "https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",
+        "https://cdn.jsdelivr.net/npm/vara@1.4.0/fonts/Satisfy/SatisfySL.json",
         [
           {
             text: text,
@@ -18,6 +20,9 @@ function Logo({ text }) {
           }
         ]
       );
+      }catch(e){
+        console.log(e);
+      }
     }
   }, []);
 
