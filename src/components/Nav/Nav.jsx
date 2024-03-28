@@ -19,7 +19,7 @@ function Nav() {
     { p: "P", link: "/project", tooltip:"Project" },
     { p: "B", link: "/blog", tooltip:"Blog" },
     { p: "C", link: "/caseStudies", tooltip:"caseStudies" },
-    { p: "A", link: "/cert", tooltip:"Cert" }
+    { p: "A", link: "/about", tooltip:"About" }
   ];
 
   return (
