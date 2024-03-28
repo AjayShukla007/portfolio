@@ -248,7 +248,7 @@
   text-overflow: ellipsis;
   /* white-space: nowrap; */ /* Prevent text from wrapping */
   /* display: flex; */
-  /* justify-content: center; */
+  /* justify-content: enter; */
  
 }
 .date{
