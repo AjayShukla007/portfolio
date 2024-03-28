@@ -1,16 +1,25 @@
 import { GithubIcon, LinkedinIcon, GmailIcon } from "../../assets/Icons.jsx";
-
+//import CustomLink from "../Interactive/customLink.jsx";
+import { Link } from "react-router-dom";
+import { useTitleData } from '../context/csContext.jsx'
 function Social() {
   // const allicons = [
   //   { id: "github", Src: <GithubIcon /> },
   //   { id: "linkedin", Src: <LinkedinIcon /> },
   //   { id: "gmail", Src:  }
   // ];
+
+  const { setMailTo } = useTitleData();
+
   return (
     <div className='socialIcon'>
-      <div><LinkedinIcon/></div>
-      <div><GmailIcon /></div>
-      <div><GithubIcon /></div>
+      <a href="/cert" target="_blank" rel="noopener noreferrer"><LinkedinIcon /></a>
+      <Link
+        onClick={() => setMailTo(true)}
+        to={{
+          pathname: '/cert'
+        }}><GmailIcon /></Link>
+      <a href="/cert" target="_blank" rel="noopener noreferrer"><GithubIcon /></a>
     </div>
   );
 }
