@@ -1,5 +1,4 @@
 import { GithubIcon, LinkedinIcon, GmailIcon } from "../../assets/Icons.jsx";
-//import CustomLink from "../Interactive/customLink.jsx";
 import { Link } from "react-router-dom";
 import { useTitleData } from '../context/csContext.jsx'
 function Social() {

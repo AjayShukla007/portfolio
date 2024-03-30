@@ -11,6 +11,7 @@ export default function useElementScrollVelocity(ref) {
       const delta = scrollTop - lastScrollTop.current;
       lastScrollTop.current = scrollTop;
       velocity.set(delta);
+      
     };
 
     const element = ref.current;

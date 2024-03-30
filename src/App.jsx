@@ -1,6 +1,7 @@
 //MODULES
 import { useState, useEffect } from "react";
 // import { LazyMotion, domAnimation } from "framer-motion";
+import {MyProvider} from './components/context/csContext.jsx';
 import { Routes, Route, useLocation } from "react-router-dom";
 import { TERipple } from "tw-elements-react";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -15,20 +16,20 @@ import Contact from "./components/Contact/Contact.jsx";
 import Home from "./pages/home/Home.jsx";
 import Projects from "./pages/project/Projects.jsx";
 import Blog from './pages/blogs/Blog.jsx';
+import CaseStudies from "./pages/caseStudies/CaseStudies.jsx";
 import About from './pages/about/About.jsx';
 //STYLING
 import "./App.css";
 
-import abg from "./assets/ALava.jpeg";
-import rock1 from "./assets/rock1.jpeg";
-import rock2 from "./assets/rock2.jpeg";
-import rock3 from "./assets/rock3.jpeg";
+// import abg from "./assets/ALava.jpeg";
+// import rock1 from "./assets/rock1.jpeg";
+// import rock2 from "./assets/rock2.jpeg";
+// import rock3 from "./assets/rock3.jpeg";
 
 const queryClient = new QueryClient();
 
 function App() {
   const [bgStyle, setBgStyle] = useState({});
-
   
   const location = useLocation();
   useEffect(() => {
@@ -43,8 +44,20 @@ function App() {
         left: "70%"
       });
     }
+    
+  window.addEventListener('load',()=>{
+    // console.log(location);
+  })
+  
+  return ()=>{
+    window.removeEventListener('load',()=>{
+      // console.log(location);
+    })
+  }
+    
   }, [location]);
   return (
+    <MyProvider>
     <div className="container mx-auto">
       <Nav />
       <Contact />
@@ -53,13 +66,15 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route exact path="/project" element={<Projects />} />
         <Route exact path="/blog" element={<Blog/>} />
-        <Route exact path="/test" element={<h1>test</h1>} />
-        <Route exact path="/cert" element={<About/>} />
+        <Route exact path="/caseStudies" element={<CaseStudies/>} />
+        <Route exact path="/about" element={<About/>} />
+        
       </Routes>
       </QueryClientProvider>
       {/*<div style={bgStyle} className="bg">
         <img className='allbg' src={abg} alt="" /> </div>*/}
     </div>
+    </MyProvider>
   );
 }
 

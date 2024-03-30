@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   transition: 0.8 ease all;
+  scrollbar-width: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
