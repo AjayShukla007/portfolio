@@ -12,6 +12,8 @@
 .logo{
   width: 49%;
   height: 100%;
+  pointer-events: none;
+  touch-action: none;
   /* background: blue; */
 }
 .socialIcon{
@@ -24,7 +26,7 @@
   gap: 2%;
   width: 49%;
 }
-.socialIcon div>svg{
+.socialIcon a>svg{
   fill: #ffffff;
   font-size: 0.5rem;
   width: 40px;
