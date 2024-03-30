@@ -39,8 +39,18 @@
   height: 50px;
 }
 .homeBackground {
-  width: 200px;
-  height: 200px;
+  text-align: right;
+  margin: -2em 0;
+  background: #000000;
+  font-size: clamp(1.5rem,4.5vh,2.5rem);
+  display: flex;
+  justify-content: flex-end;
+  transition: 0.4s linear all;
+}
+.time:hover{
+  color: #ffffffad;
+  transition: 0.4s linear all;
+
 }
 .motivation{
   position: fixed;
