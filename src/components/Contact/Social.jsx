@@ -2,12 +2,7 @@ import { GithubIcon, LinkedinIcon, GmailIcon } from "../../assets/Icons.jsx";
 import { Link } from "react-router-dom";
 import { useTitleData } from '../context/csContext.jsx'
 function Social() {
-  // const allicons = [
-  //   { id: "github", Src: <GithubIcon /> },
-  //   { id: "linkedin", Src: <LinkedinIcon /> },
-  //   { id: "gmail", Src:  }
-  // ];
-
+ 
   const { setMailTo } = useTitleData();
 
   return (

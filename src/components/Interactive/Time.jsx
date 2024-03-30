@@ -15,8 +15,8 @@ function Time() {
 
     return (
         <div className="time">
-            {time.map(data => (
-                <div>{data}</div>
+            {time.map((data,i) => (
+                <div key={i}>{data}</div>
             ))}
         </div>
     )
