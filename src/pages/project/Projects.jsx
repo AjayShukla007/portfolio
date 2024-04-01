@@ -142,7 +142,7 @@ function Projects() {
             image={data.image}
             title={data.title}
             description={data.description}
-            link={data.link}
+            live={data.live}
             source={data.source}
             lang={langKey}
             y1={y2}
