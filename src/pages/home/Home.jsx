@@ -24,14 +24,10 @@ function Home() {
         <Time />
       </div>
       <Name />
-      {/*<div className="motivation">
-      <Motivation/>
-    </div>*/}
       <div className="work">
         <TypeAnimation
           sequence={[
-            // Same substring at the start will only be typed once, initially
-            "I am a MERN Stack Developer",
+           "I am a MERN Stack Developer",
             1000,
             "I am a ReactJS Developer",
             1000,
@@ -53,5 +49,3 @@ function Home() {
 }
 
 export default Home;
-
-// repeat={Infinity}
