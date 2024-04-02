@@ -18,9 +18,10 @@
   /* border: 2px solid red; */
   color: #ffffff;
   z-index: 5;
+  transition: 0.8s linear all;
 }
 .Name:hover {
-  color: #ff5d5dad;
+  color: #eeeeeead;
 }
 .work {
   /* border: 2px solid red; */
@@ -45,6 +46,10 @@
   font-size: clamp(1.5rem,4.5vh,2.5rem);
   display: flex;
   justify-content: flex-end;
+  transition: 0.4s linear all;
+}
+.time{
+  text-align: center;
   transition: 0.4s linear all;
 }
 .time:hover{
