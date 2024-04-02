@@ -7,13 +7,13 @@ function Social() {
 
   return (
     <div className='socialIcon'>
-      <a href="/cert" target="_blank" rel="noopener noreferrer"><LinkedinIcon /></a>
+      <a href="https://www.linkedin.com/in/ajay-shukla-803308212" target="_blank" rel="noopener noreferrer"><LinkedinIcon /></a>
       <Link
         onClick={() => setMailTo(true)}
         to={{
-          pathname: '/cert'
+          pathname: '/about'
         }}><GmailIcon /></Link>
-      <a href="/cert" target="_blank" rel="noopener noreferrer"><GithubIcon /></a>
+      <a href="https://github.com/AjayShukla007" target="_blank" rel="noopener noreferrer"><GithubIcon /></a>
     </div>
   );
 }
