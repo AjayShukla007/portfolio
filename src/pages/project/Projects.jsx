@@ -42,34 +42,7 @@ function Projects() {
 
   const mainRef = React.useRef(null);
   const pink = saturation => `hsl(327, ${saturation}%, 50%)`;
-  const blur = blur => `blur(${blur || 0}px)`;
-  /*const scrollY = motionValue(0); // Create a MotionValue for scroll position
-
-  const controls = useAnimation();
-  const updateScrollY = () => {
-      scrollY.set(-mainRef.current.getBoundingClientRect().top);
-      //console.log("hey ji");
-    };
-  // useEffect(() => {
-  //   // Update scrollY value based on containerRef's top position
-  //   const updateScrollY = () => {
-  //     scrollY.set(-mainRef.current.getBoundingClientRect().top);
-  //     console.log("hey ji");
-  //   };
-
-  //   mainRef.current.addEventListener('scroll', updateScrollY);
-
-  //   // Clean up the event listener when the component unmounts
-  //   return () => {
-  //     mainRef.current.removeEventListener('scroll', updateScrollY);
-  //   };
-  // }, []);
-
-  // Calculate the scroll position for the parallax effect
-  const scrollPosition = useTransform(scrollY, (value) => {
-    // Adjust this value as needed for the parallax effect
-    return value * 0.5; // You can change this multiplier for stronger/weaker parallax
-  });*/
+  const blur = blur => `blur(${0 || blur}px)`;
 
   const { scrollY } = useScroll({
     target: mainRef
@@ -107,24 +80,14 @@ function Projects() {
   let filter = useTransform(
     yVelocity,
     [-2000, 0, 2000],
-    [blur(50), blur(0), blur(50)]
+    [blur(50), blur(0), blur(10)]
   );
 
-  // useMotionValueEvent(scrollY, "change", latest => {
-  //   console.log(backgroundColor);
-  // });
-  // if (isLoading) return "Loading...";
-  // if (error) return "An error has occurred: " + error.message;
-  // console.log(data);
-  /*drag="y"
-      dragElastic={1}
-      dragConstraints={{ left: -200, right: 200 }}
-      style={{ x, scale, backgroundColor }}*/
   return (
     <motion.div
       className="allProjects"
       ref={mainRef}
-      style={{ filter, transition: "1s ease all" }}
+      style={{ filter, transition: "1s linear all" }}
     >
       {data?data.map(data => {
         const langKey = data.tags.split(' ').map(tags => {
