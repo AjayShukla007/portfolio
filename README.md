@@ -8,4 +8,4 @@
 ### case studies -working
 ### About 
 
-# [BAckend](https://github.com/AjayShukla007?tab=repositories)
+# [Backend](https://github.com/AjayShukla007?tab=repositories)
