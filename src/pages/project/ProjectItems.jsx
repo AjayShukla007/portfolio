@@ -1,14 +1,7 @@
 import React, { useEffect, useState, useRef, Suspense, lazy } from "react";
 import {
   motion,
-  useScroll,
-  useAnimation,
-  useTransform,
-  useInView,
-  useSpring,
-  MotionValue,
-  motionValue,
-  useMotionValueEvent
+  useInView
 } from "framer-motion";
 import { TERipple } from "tw-elements-react";
 import DOMPurify from 'dompurify';
