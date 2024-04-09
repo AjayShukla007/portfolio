@@ -2,9 +2,9 @@
 
 function Intro() {
   return (
-  <>
-  <Quotes/>
-  </>
+    <>
+      <Quotes />
+    </>
   )
 }
 
