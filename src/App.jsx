@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 // import { LazyMotion, domAnimation } from "framer-motion";
 import {MyProvider} from './components/context/csContext.jsx';
 import { Routes, Route, useLocation } from "react-router-dom";
-import { TERipple } from "tw-elements-react";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 
@@ -20,11 +19,6 @@ import CaseStudies from "./pages/caseStudies/CaseStudies.jsx";
 import About from './pages/about/About.jsx';
 //STYLING
 import "./App.css";
-
-// import abg from "./assets/ALava.jpeg";
-// import rock1 from "./assets/rock1.jpeg";
-// import rock2 from "./assets/rock2.jpeg";
-// import rock3 from "./assets/rock3.jpeg";
 
 const queryClient = new QueryClient();
 
@@ -71,8 +65,6 @@ function App() {
         
       </Routes>
       </QueryClientProvider>
-      {/*<div style={bgStyle} className="bg">
-        <img className='allbg' src={abg} alt="" /> </div>*/}
     </div>
     </MyProvider>
   );
