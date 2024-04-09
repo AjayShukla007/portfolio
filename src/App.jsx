@@ -1,5 +1,5 @@
 //MODULES
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 // import { LazyMotion, domAnimation } from "framer-motion";
 import {MyProvider} from './components/context/csContext.jsx';
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -8,7 +8,16 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 
 //COMPONENTS
-import Nav from "./components/Nav/Nav.jsx";
+const Nav = lazy(() => import('./components/Nav/Nav.jsx'));
+const Contact = lazy(() => import('./components/Contact/Contact.jsx'));
+
+// PAGES
+const Home = lazy(() => import('./pages/home/Home.jsx'));
+const Projects = lazy(() => import('./pages/project/Projects.jsx'));
+const Blog = lazy(() => import('./pages/blogs/Blog.jsx'));
+const CaseStudies = lazy(() => import('./pages/caseStudies/CaseStudies.jsx'));
+const About = lazy(() => import('./pages/about/About.jsx'));
+/* import Nav from "./components/Nav/Nav.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 
 //PAGES
@@ -16,7 +25,7 @@ import Home from "./pages/home/Home.jsx";
 import Projects from "./pages/project/Projects.jsx";
 import Blog from './pages/blogs/Blog.jsx';
 import CaseStudies from "./pages/caseStudies/CaseStudies.jsx";
-import About from './pages/about/About.jsx';
+import About from './pages/about/About.jsx'; */
 //STYLING
 import "./App.css";
 
@@ -53,6 +62,7 @@ function App() {
   return (
     <MyProvider>
     <div className="container mx-auto">
+      <Suspense fallback={<div>Loading...</div>}>
       <Nav />
       <Contact />
     <QueryClientProvider client={queryClient}>
@@ -65,6 +75,7 @@ function App() {
         
       </Routes>
       </QueryClientProvider>
+    </Suspense>
     </div>
     </MyProvider>
   );
