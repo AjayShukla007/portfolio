@@ -1,23 +1,13 @@
-import { useEffect } from 'react';
 import { TypeAnimation } from "react-type-animation";
 import "./styles/home.css";
 import { Name } from "./Name.jsx";
 import Icon from './Icons.jsx';
-import Motivation from './Motivation.jsx';
 import QuotesHome from '../../components/Quotes/Quotes1.jsx';
 import Time from '../../components/Interactive/time.jsx';
 
 
 function Home() {
-  useEffect(() => {
-    // const vivus = new Vivus('my-svg', { 
-    //   type: "scenario-sync",
-    //     duration: 11,
-    //     delay: 3,
-    //     forceRender: false,
-    //     animTimingFunction: Vivus.EASE
-    // });
-  }, []);
+  
   return (
     <div className="home">
       <div className="homeBackground">
