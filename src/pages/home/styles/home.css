@@ -2,6 +2,7 @@
   /* border: 2px solid grey; */
   width: 100vw;
   height: 90vh;
+  background: #000;
   /* height: 95vh; */
   display: flex;
   flex-direction: column;
@@ -15,7 +16,6 @@
   overflow: scroll;
 }
 .Name {
-  /* border: 2px solid red; */
   color: #ffffff;
   z-index: 5;
   transition: 0.8s linear all;
@@ -168,12 +168,6 @@
   /* Give it a "3D" appearance */
   stroke-width: 3px;
 }
-
-/* .path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: draw 10s linear forwards;
-} */
 
 .quote1{
   position: absolute;
