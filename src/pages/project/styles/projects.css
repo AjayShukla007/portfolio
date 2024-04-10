@@ -1,6 +1,4 @@
 .allProjects {
-  /* border: 1px solid red; */
-  /* height: 80vmin; */
   height: 70vh;
   width: 100vw;
   overflow-y: scroll;
@@ -9,27 +7,25 @@
   scroll-snap-type: y mandatory;
   box-shadow: 0 -20px 5px #000000 inset;
   scrollbar-width: none;
-  /* filter: blur(0); */
 }
+
 .allProjects::-webkit-scrollbar {
   background: red;
   display: none;
 }
+
 .ProjectContainer {
   scroll-snap-align: start;
   margin: 4% 0 0 0;
   width: 80vw;
   height: 70vmin;
-  /* height: 76vmin; */
-  /* border: 1px solid green; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* overflow: hidden; */
   overflow-x: visible;
 }
+
 .projectImage {
-  /* border: 1px solid red; */
   display: inline-block;
   width: 35vmin;
   height: 35vmin;
@@ -40,6 +36,7 @@
   border-top-left-radius: 10px;
   /* overflow-y: scroll; */
 }
+
 .projectImage div {
   width: 100%;
   height: 100%;
@@ -49,47 +46,50 @@
   justify-content: center;
   align-items: center;
 }
+
 .projectImage svg {
   width: 100%;
   height: 100%;
 }
+
 .projectDetaills {
   color: #ffffff;
   /* border: 1px solid blue; */
   width: 44vw;
   height: 35vmin;
-  /* padding: 0 5% 0 0; */
-  /* flex-grow: 2; */
   text-align: right;
 }
+
 .projectTitle {
   font-size: 2.5vmax;
   padding: 4% 5% 0 0;
 }
+
 .projectTitle h1 {
   font-size: 1.5em;
   margin: 0;
 }
+
 .projectLang {
   display: flex;
   justify-content: flex-start;
   overflow: scroll;
   gap: 10px;
-  /* border: 1px solid red; */
   margin: 5%;
   text-align: center;
 }
+
 @keyframes scale {
   100% {
     transform: scale(1);
   }
 }
+
 .langScroll {
   display: inline-block;
   animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
-
-  /* box-shadow: 20px 0 0 grey inset; */
 }
+
 .langScroll .tagSpan {
   margin: 0 5px;
   font-size: 0.8rem;
@@ -97,63 +97,83 @@
   display: inline-block;
   opacity: 0;
 }
+
 .tagSpan {
   display: flex;
 }
+
 .langScroll span:hover {
   text-shadow: 0 0 5px #ffffff;
 }
+
 .tagEnter span:nth-child(1) {
   animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(2) {
   animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(3) {
   animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(4) {
   animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(5) {
   animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(6) {
   animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(7) {
   animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(8) {
   animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(9) {
   animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(10) {
   animation: fade-in 0.8s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(11) {
   animation: fade-in 0.8s 1.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(12) {
   animation: fade-in 0.8s 1.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(13) {
   animation: fade-in 0.8s 1.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(14) {
   animation: fade-in 0.8s 1.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(15) {
   animation: fade-in 0.8s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(16) {
   animation: fade-in 0.8s 1.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(17) {
   animation: fade-in 0.8s 1.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
+
 .tagEnter span:nth-child(18) {
   animation: fade-in 0.8s 1.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }
@@ -165,9 +185,6 @@
   }
 }
 
-/*Resources
-*/
-
 .link {
   display: flex;
   justify-content: flex-end;
@@ -176,46 +193,50 @@
   overflow: scroll;
   /* border: 1px solid red; */
 }
+
 .link a {
   color: grey;
   display: flex;
   /* webkit-tap-highlight-color: none; */
   text-decoration: none;
 }
-/* .link a:active {
-  webkit-tap-highlight-color: none;
-} */
+
 .link a:hover {
   cursor: pointer;
 }
+
 .link svg {
   fill: #808080;
   transition: 0.8s ease all;
 }
+
 .liveLink {
   display: flex;
 }
+
 .liveLink svg:hover {
   fill: #0000ff;
 }
+
 .sourceCode {
   display: flex;
 }
+
 .sourceCode svg {
   width: 80%;
 }
+
 .sourceCode svg:hover {
   fill: #240039;
 }
+
 .projectDiscription {
   width: 90%;
   color: #ffffff;
-  /* border: 1px solid pink; */
-  /* transform: translateY(-50%); */
   overflow: hidden;
 }
+
 .deacriptionText {
-  /* border: 1px solid red; */
   padding: 5%;
   transform: translateY(-10%);
   text-align: center;
@@ -225,20 +246,23 @@
   transition: 0.8s ease all;
   scrollbar-width: none;
 }
+
 .deacriptionText::-webkit-scrollbar {
   background: red;
   display: none;
 }
+
 .deacriptionText:hover {
   text-shadow: 0 0 4px #fff;
   padding: 0 5% 5% 5%;
 }
+
 .middleLines {
   width: 80%;
   margin: 0 5%;
   overflow: hidden !important;
-  /* border: 1px solid red; */
 }
+
 .saparatorLine {
   width: 100%;
   height: 1px;
@@ -246,8 +270,8 @@
   background: #6e6e6e;
   overflow: hidden;
 }
+
 .overlay-input2 {
-  /* margin: 4% 0 0 0; */
   transform: translate(-20%);
   pointer-events: none;
   margin: 0 0 5% 0;
@@ -255,23 +279,22 @@
   left: 0;
   top: 0;
   z-index: 10;
-  /* height: 3rem;
-  width: 100%; */
   width: 200%;
   height: 1px;
   overflow: hidden;
   cursor: default;
   border-radius: 0.5rem;
   background-color: transparent;
-  /* background-color: red; */
   padding: 0.875rem;
   opacity: 0;
   transition: opacity 0.5s;
 }
+
 .base-input2:focus {
   border-color: #e47320;
   overflow: hidden;
 }
+
 .base-input:focus {
   border-color: #e47320;
 }
@@ -283,8 +306,6 @@
   left: 0;
   top: 0;
   z-index: 10;
-  /* height: 3rem;
-  width: 100%; */
   width: 80vw;
   height: 70vmin;
   cursor: default;
@@ -306,13 +327,16 @@
   transition: 0.8s ease all;
   border-radius: 4px;
 }
+
 .nextItem:hover {
   background: #755538;
 }
+
 @media only screen and (max-width: 450px) {
   .deacriptionText {
     display: none;
   }
+
   .link {
     height: 15%;
     width: 100%;
