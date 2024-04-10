@@ -27,9 +27,7 @@ function BlogItems(props) {
   const partialPhrase = details.substring(0, seventyPercent);
 
   const blogsRef = useRef(null);
-  // const blogInView = useInView(blogsRef, {
-  //     once: true
-  //   });
+  
   const blogInView = useInView(blogsRef, {
     margin: "-15% 0px -30% 0px"
   });
