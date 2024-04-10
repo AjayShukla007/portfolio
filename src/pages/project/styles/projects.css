@@ -2,7 +2,6 @@
   height: 70vh;
   width: 100vw;
   overflow-y: scroll;
-  /* overflow-y: visible; */
   overflow-x: hidden !important;
   scroll-snap-type: y mandatory;
   box-shadow: 0 -20px 5px #000000 inset;
