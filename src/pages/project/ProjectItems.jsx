@@ -6,12 +6,10 @@ import {
 import { TERipple } from "tw-elements-react";
 import DOMPurify from 'dompurify';
 
-// const {SourceLink, LiveLink} = lazy(() => import('../../assets/Icons.jsx'));
-// const LiveLink = lazy(() => import('../../assets/Icons.jsx'));
-import {SourceLink, LiveLink} from '../../assets/Icons.jsx';
+import { SourceLink, LiveLink } from '../../assets/Icons.jsx';
 
 function ProjectItems(props) {
-  
+
   const divRef = useRef(null);
   const divSapRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -32,7 +30,7 @@ function ProjectItems(props) {
   useEffect(() => {
     if (spanInView) {
       tagSpan.current.classList.add("tagEnter");
-      
+
       // console.log(tagSpan.current.children[0].textContent)
     } else {
       tagSpan.current.classList.remove("tagEnter");
@@ -87,22 +85,22 @@ function ProjectItems(props) {
   const handleMouseLeave2 = () => {
     setOpacity2(0);
   };
-  
+
   const containerRef = useRef(null);
 
-  const containerView = useInView(containerRef,{
+  const containerView = useInView(containerRef, {
     margin: "0px 0px -50% 0px"
   });
   const image = props.image;
   const cleanImage = DOMPurify.sanitize(image);
-const conOnclick = ()=>{
-  if(containerView){
-    // console.log("in view");
-  }else{
-    // console.log("not in view");
-    containerRef.current.scrollIntoView({behavior:"smooth", block: "center", inline:"nearest"});
+  const conOnclick = () => {
+    if (containerView) {
+      // console.log("in view");
+    } else {
+      // console.log("not in view");
+      containerRef.current.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    }
   }
-}
 
   return (
     <>
@@ -110,9 +108,9 @@ const conOnclick = ()=>{
         <motion.div
           className="ProjectContainer base-input"
           style={{
-            visibility:!containerView?'none':'visible',
-            filter:containerView?'blur(0px)':'blur(2px)',
-            transition:'1s ease all'
+            visibility: !containerView ? 'none' : 'visible',
+            filter: containerView ? 'blur(0px)' : 'blur(2px)',
+            transition: '1s ease all'
           }}
           onMouseMove={handleMouseMove}
           onFocus={handleFocus}
@@ -120,18 +118,18 @@ const conOnclick = ()=>{
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           ref={containerRef}
-          onClick={()=>conOnclick()}
+          onClick={() => conOnclick()}
         >
           <motion.div style={{
-            y:containerView?'0px':'-100px', 
-            transition:'0.5s ease all',
-            display:'flex',
-            justifyContent:"center",
-            alignItems:'center'
-          }} className="projectImage" 
-          animate={{ y: props.scrollPosition }}
+            y: containerView ? '0px' : '-100px',
+            transition: '0.5s ease all',
+            display: 'flex',
+            justifyContent: "center",
+            alignItems: 'center'
+          }} className="projectImage"
+            animate={{ y: props.scrollPosition }}
           >
-      <div dangerouslySetInnerHTML={{ __html: cleanImage }} />
+            <div dangerouslySetInnerHTML={{ __html: cleanImage }} />
           </motion.div>
           <div className="projectDetaills">
             <div
@@ -152,25 +150,25 @@ const conOnclick = ()=>{
               transition={{ repeat: Infinity, duration: 2 }}
             >
               <motion.div className="langScroll" ref={tagSpan}>
-                {props.lang.map((tags,index) => (
+                {props.lang.map((tags, index) => (
                   <span key={index} className="tagSpan">{tags}</span>
                 ))}
               </motion.div>
             </motion.div>
             <div className="link">
-            {props.live !== '$' && (<div className="liveLink">
-              <a target='_blank' id='live' href={props.live}>
-              live
-              <LiveLink/>
-              </a>
+              {props.live !== '$' && (<div className="liveLink">
+                <a target='_blank' id='live' href={props.live}>
+                  live
+                  <LiveLink />
+                </a>
               </div>)}
               <div className="sourceCode">
-             {/* <Suspense fallback={<span>...</span>}>*/}
-             <a target='_blank' href={props.source}>
-              source
-              <SourceLink/>
-              </a>
-             {/* </Suspense>*/}
+                {/* <Suspense fallback={<span>...</span>}>*/}
+                <a target='_blank' href={props.source}>
+                  source
+                  <SourceLink />
+                </a>
+                {/* </Suspense>*/}
               </div>
             </div>
           </div>
@@ -198,9 +196,6 @@ const conOnclick = ()=>{
             <div className="deacriptionText">
               {props.description}
             </div>
-            {/*<div className="nextItem">
-              case studies
-            </div>*/}
           </div>
         </motion.div>
         <div
@@ -209,7 +204,7 @@ const conOnclick = ()=>{
             border: "1px solid rgb(228, 115, 32)",
             opacity,
             WebkitMaskImage: `radial-gradient(30% 30px at ${position.x}px ${position.y}px, black 45%, transparent)`,
-            filter:containerView?'blur(0px)':'blur(20px)',
+            filter: containerView ? 'blur(0px)' : 'blur(20px)',
           }}
           aria-hidden="true"
           className="overlay-input"
