@@ -140,13 +140,13 @@
   font-size: 1.2em;
   transform: translateY(-150%);
   color: #0052ab;
-  webkit-tap-highlight-color: red;
+  /* webkit-tap-highlight-color: red; */
   /* background: red; */
 }
 
 .blogDetaill a:active {
   font-size: 1.3em;
-  webkit-tap-highlight-color: red;
+  /* webkit-tap-highlight-color: red; */
 }
 
 .blogTags {
