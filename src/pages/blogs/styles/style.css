@@ -1,4 +1,4 @@
-.allBlogs{
+.allBlogs {
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -8,19 +8,22 @@
   overflow-y: scroll;
   scrollbar-width: none;
   scroll-snap-type: y mandatory;
-  
+
 }
-.allBlogs::-webkit-scrollbar{
+
+.allBlogs::-webkit-scrollbar {
   background: red;
   display: none;
 }
-.searchBpx{
+
+.searchBpx {
   background: #2a2a2a;
   border-radius: 20px;
   transition: 0.8s ease all;
   height: 3em;
 }
-.allBlogs input{
+
+.allBlogs input {
   background: transparent;
   color: #fff;
   border-radius: 20px;
@@ -29,18 +32,18 @@
   height: 3em;
   width: 100%;
 }
-.allBlogs input:focus{
+
+.allBlogs input:focus {
   outline: none;
 }
+
 .base-input3:focus {
   border-color: #e47320;
 }
+
 .overlay-input3 {
   /* touch-action: none; */
   pointer-events: none;
-  /* position: absolute; */
-  /* background: red; */
-  /* color: #fff; */
   border-radius: 20px;
   padding: 0 1.5em;
   transition: 0.8s ease all;
@@ -51,7 +54,7 @@
   transform: translateY(-100%);
 }
 
-.searchPlaseHolder{
+.searchPlaseHolder {
   background: transparent;
   color: grey;
   height: 3em;
@@ -67,24 +70,24 @@
   align-items: center;
   position: relative;
 }
-.searchPlaseHolder span{
+
+.searchPlaseHolder span {
   transition: 1s ease all;
   position: absolute;
   /* border: 1px solid red; */
   width: 20%;
-  /* right:90%; */
-  /* text-align: right; */
-  /* padding: 0 4.5% 0 0; */
   display: flex;
   align-items: center;
   pointer-events: none;
   touch-action: none;
 }
-.placeText{
+
+.placeText {
   /* border: 1px solid red; */
   padding: 0;
 }
-.blogs{
+
+.blogs {
   scroll-snap-align: start;
   width: 100%;
   border-top: 0.5px solid grey;
@@ -98,18 +101,21 @@
   overflow: scroll;
   scrollbar-width: none;
   transition: 0.8s ease all;
-  
+
 }
-.blogs::-webkit-scrollbar{
+
+.blogs::-webkit-scrollbar {
   background: red;
   display: none;
 }
-.blogTitle{
+
+.blogTitle {
   font-size: 2em;
 }
-.blogDetaill{
+
+.blogDetaill {
   /* background: #2a2a2a; */
-  background: linear-gradient(#2a2a2a 70%,#000000);
+  background: linear-gradient(#2a2a2a 70%, #000000);
   border-radius: 5px;
   padding: 0.5em;
   font-size: 1.1em;
@@ -117,7 +123,8 @@
   display: flex;
   flex-direction: column;
 }
-.retio{
+
+.retio {
   background: #2a2a2a;
   opacity: 0.5;
   filter: blur(5px);
@@ -125,7 +132,8 @@
   height: 1.1em;
   transform: translateY(-100%);
 }
-.blogDetaill a{
+
+.blogDetaill a {
   width: 100%;
   text-align: center;
   height: 1.1em;
@@ -135,20 +143,24 @@
   webkit-tap-highlight-color: red;
   /* background: red; */
 }
-.blogDetaill a:active{
+
+.blogDetaill a:active {
   font-size: 1.3em;
   webkit-tap-highlight-color: red;
 }
-.blogTags{
+
+.blogTags {
   text-align: center;
   display: flex;
   flex-direction: row;
   gap: 1em;
 }
-.blogTags:hover{
+
+.blogTags:hover {
   text-shadow: 0 0 8px grey;
 }
-.date{
+
+.date {
   position: absolute;
   top: 0;
   right: 0;
