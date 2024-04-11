@@ -5,7 +5,6 @@ import {
 } from "framer-motion";
 import { TERipple } from "tw-elements-react";
 import DOMPurify from 'dompurify';
-
 import { SourceLink, LiveLink } from '../../assets/Icons.jsx';
 
 function ProjectItems(props) {
