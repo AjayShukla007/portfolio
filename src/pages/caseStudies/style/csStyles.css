@@ -8,6 +8,7 @@
   flex-direction: row;
   overflow: scroll;
 }
+
 .CsNav {
   background: #80808062;
   width: 25%;
@@ -25,14 +26,17 @@
   padding: 0.3em 1em 0 1em;
   font-size: clamp(0.5rem, 2.5vh, 1.5rem);
 }
+
 .CsNavStrink {
   position: relative;
   right: 0;
 }
-.csNavActive{
+
+.csNavActive {
   color: rgb(255, 253, 253) !important;
   background: rgb(139, 139, 139);
 }
+
 .CsItems {
   background: #000000;
   color: #b6b6b6;
@@ -40,27 +44,32 @@
   padding: 0.8em;
   text-align: center;
   font-size: clamp(0.5rem, 2vh, 1rem);
-  
+
 }
+
 .csTitle {
   font-size: clamp(2rem, 4vh, 4rem);
 }
-.csArch{
+
+.csArch {
   font-size: clamp(0.5rem, 2vh, 1rem);
   color: #fff;
   margin: 1em 0 0 0;
 
 }
+
 .csFlow {
   user-select: none;
   overflow-x: scroll;
   overflow-y: scroll;
   scrollbar-width: 0px;
 }
+
 .csFlow::-webkit-scrollbar {
   background: red;
   display: none;
 }
+
 .betterUi {
   background: black;
   width: 100%;
@@ -87,6 +96,7 @@
   pointer-events: none !important;
   touch-action: none !important;
 }
+
 .react-flow__node {
   /* width: clamp(6rem,8vh,8rem);
   height: clamp(1rem,2vh,2rem);
@@ -103,47 +113,58 @@
   pointer-events: none !important;
   touch-action: none !important;
 }
+
 .react-flow__edge.animated {
   fill: red !important;
   pointer-events: none !important;
   touch-action: none !important;
 }
+
 .react-flow__edge-text {
   fill: grey !important;
   pointer-events: none !important;
   touch-action: none !important;
 }
+
 .react-flow__edge-textbg {
   fill: black !important;
   pointer-events: none !important;
   touch-action: none !important;
 }
+
 .featureItems {
   border-bottom: 1px solid white;
   margin: 1em;
 }
+
 .featureItems:nth-child(odd) {
   color: #b6b6b6;
   text-align: left;
 }
+
 .featureItems:nth-child(even) {
   color: #b6b6b6;
   text-align: right;
 }
+
 .techUsedItems {
   border-bottom: 1px solid white;
   text-align: left;
   margin: 1em;
 }
+
 .techUsedItems:nth-child(odd) {
   color: #b6b6b6;
 }
+
 .techUsedItems:nth-child(even) {
   color: #b6b6b6;
 }
+
 .csMotivation {
   margin: 2em 1em 1em 1em;
 }
+
 .headingSpan {
   color: white;
   display: block;
