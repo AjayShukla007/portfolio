@@ -5,11 +5,6 @@ import ReactFlow from "reactflow";
 import "reactflow/dist/style.css";
 
 import { useTitleData } from "../../components/context/csContext.jsx";
-// const initialNodes = [
-//   { id: '1', position: { x: 0, y: 0 }, data: { label: '1' } },
-//   { id: '2', position: { x: 0, y: 100 }, data: { label: '2' } },
-// ];
-// const initialEdges = [{ id: 'e1-2', source: '1', target: '2' }];
 
 const getCsUrl = import.meta.env.VITE_API_GET_CS;
 
@@ -74,14 +69,11 @@ function CsItems(props) {
 
   return (
     <>
-      {/* <div className="CsItems">{title}</div>*/}
       {data ? (
         data.map((element, i) => {
-          // console.log(JSON.parse(element.flow));
           const allNodes = element.flow.split("$");
           const initialNodes = JSON.parse(allNodes[0].trim());
           const initialEdges = JSON.parse(allNodes[1].trim());
-          // console.log(initialEdges);
           return (
             <div className="CsItems" key={i}>
               <div className="csTitle">{element.title}</div>
@@ -107,10 +99,6 @@ function CsItems(props) {
                   panOnScroll={true}
                   panOnScrollMode="horizontal"
                   nodesConnectable={false}
-                  // interaction={{
-                  //   preventVerticalPan: false,
-                  //   preventVerticalDrag: false,
-                  // }}
                 />
                 <div className="bettderUi"></div>
               </div>
