@@ -7,15 +7,6 @@ function CsNavItems(props) {
 
   const handleIdClick = async () => {
     await setTitle(csNavItemsRef.current.id);
-    // if (!csNavItemsRef.current.classList.contains("csNavActive")) {
-    //   csNavItemsRef.current.classList.add("csNavActive");
-    // } else {
-    //   csNavItemsRef.current.classList.remove("csNavActive");
-    // }
-    // setTimeout(() => {
-      //   csNavItemsRef.current.classList.remove("csNavActive");
-      // }, 1200);
-      
   };
 
   return (
