@@ -20,7 +20,6 @@ const fetchCsTitles = async () => {
         headers
       }
     );
-    // console.log(res.data);
     // return res.data.reverse();
     return res.data;
   }
