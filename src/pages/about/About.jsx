@@ -9,12 +9,9 @@ import axios from "axios";
 import {
   motion,
   useScroll,
-  useAnimation,
   useTransform,
-  useSpring,
   useVelocity,
-  useMotionValueEvent,
-  useMotionValue
+  useMotionValueEvent
 } from "framer-motion";
 import useElementScrollVelocity from "../../hook/ScrollVelocity.jsx";
 
