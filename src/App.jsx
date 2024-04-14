@@ -20,12 +20,7 @@ const About = lazy(() => import('./pages/about/About.jsx'));
 /* import Nav from "./components/Nav/Nav.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 
-//PAGES
-import Home from "./pages/home/Home.jsx";
-import Projects from "./pages/project/Projects.jsx";
-import Blog from './pages/blogs/Blog.jsx';
-import CaseStudies from "./pages/caseStudies/CaseStudies.jsx";
-import About from './pages/about/About.jsx'; */
+*/
 //STYLING
 import "./App.css";
 
