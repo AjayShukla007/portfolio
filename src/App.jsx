@@ -1,7 +1,7 @@
 //MODULES
 import { useState, useEffect, lazy, Suspense } from "react";
 // import { LazyMotion, domAnimation } from "framer-motion";
-import {MyProvider} from './components/context/csContext.jsx';
+import { MyProvider } from './components/context/csContext.jsx';
 import { Routes, Route, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -17,18 +17,16 @@ const Projects = lazy(() => import('./pages/project/Projects.jsx'));
 const Blog = lazy(() => import('./pages/blogs/Blog.jsx'));
 const CaseStudies = lazy(() => import('./pages/caseStudies/CaseStudies.jsx'));
 const About = lazy(() => import('./pages/about/About.jsx'));
-/* import Nav from "./components/Nav/Nav.jsx";
-import Contact from "./components/Contact/Contact.jsx";
 
-*/
 //STYLING
 import "./App.css";
 
 const queryClient = new QueryClient();
 
 function App() {
+  // eslint-disable-next-line no-unused-vars
   const [bgStyle, setBgStyle] = useState({});
-  
+
   const location = useLocation();
   useEffect(() => {
     // console.log(location);
@@ -42,36 +40,36 @@ function App() {
         left: "70%"
       });
     }
-    
-  window.addEventListener('load',()=>{
-    // console.log(location);
-  })
-  
-  return ()=>{
-    window.removeEventListener('load',()=>{
+
+    window.addEventListener('load', () => {
       // console.log(location);
     })
-  }
-    
+
+    return () => {
+      window.removeEventListener('load', () => {
+        // console.log(location);
+      })
+    }
+
   }, [location]);
   return (
     <MyProvider>
-    <div className="container mx-auto">
-      <Suspense fallback={<div>Loading...</div>}>
-      <Nav />
-      <Contact />
-    <QueryClientProvider client={queryClient}>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/project" element={<Projects />} />
-        <Route exact path="/blog" element={<Blog/>} />
-        <Route exact path="/caseStudies" element={<CaseStudies/>} />
-        <Route exact path="/about" element={<About/>} />
-        
-      </Routes>
-      </QueryClientProvider>
-    </Suspense>
-    </div>
+      <div className="container mx-auto">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Nav />
+          <Contact />
+          <QueryClientProvider client={queryClient}>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/project" element={<Projects />} />
+              <Route exact path="/blog" element={<Blog />} />
+              <Route exact path="/caseStudies" element={<CaseStudies />} />
+              <Route exact path="/about" element={<About />} />
+
+            </Routes>
+          </QueryClientProvider>
+        </Suspense>
+      </div>
     </MyProvider>
   );
 }
