@@ -7,7 +7,7 @@ import Time from '../../components/Interactive/time.jsx';
 
 
 function Home() {
-  
+
   return (
     <div className="home">
       <div className="homeBackground">
@@ -17,7 +17,7 @@ function Home() {
       <div className="work">
         <TypeAnimation
           sequence={[
-           "I am a MERN Stack Developer",
+            "I am a MERN Stack Developer",
             1000,
             "I am a ReactJS Developer",
             1000,
