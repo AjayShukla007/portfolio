@@ -1,5 +1,6 @@
-import { useRef, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
+import PropTypes from 'prop-types';
 
 function BlogItems(props) {
   const highlightText = (text, highlight) => {
@@ -44,7 +45,7 @@ function BlogItems(props) {
       <div className="blogDetaill">
         {partialPhrase}
         <div className="retio"></div>
-        <a className="blogLink" target="_blank" href={props.link}>
+        <a className="blogLink" target="_blank" href={props.link} rel="noreferrer">
           Read More
         </a>
       </div>
@@ -54,6 +55,14 @@ function BlogItems(props) {
       <div className="date">{props.date}</div>
     </div>
   );
+}
+BlogItems.propTypes = {
+  details: PropTypes.string,
+  title: PropTypes.string,
+  highlight: PropTypes.string,
+  link: PropTypes.string,
+  tags: PropTypes.string,
+  date: PropTypes.string,
 }
 
 export default BlogItems;
