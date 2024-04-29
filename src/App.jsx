@@ -6,10 +6,10 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 
-
 //COMPONENTS
 const Nav = lazy(() => import('./components/Nav/Nav.jsx'));
 const Contact = lazy(() => import('./components/Contact/Contact.jsx'));
+import getData from "./components/auth/Auth.jsx";
 
 // PAGES
 const Home = lazy(() => import('./pages/home/Home.jsx'));
@@ -20,13 +20,14 @@ const About = lazy(() => import('./pages/about/About.jsx'));
 
 //STYLING
 import "./App.css";
+import NotFound from "./pages/utility/404.jsx";
 
 const queryClient = new QueryClient();
 
 function App() {
   // eslint-disable-next-line no-unused-vars
   const [bgStyle, setBgStyle] = useState({});
-
+getData();
   const location = useLocation();
   useEffect(() => {
     // console.log(location);
@@ -65,7 +66,7 @@ function App() {
               <Route exact path="/blog" element={<Blog />} />
               <Route exact path="/caseStudies" element={<CaseStudies />} />
               <Route exact path="/about" element={<About />} />
-
+              <Route exact path="/*" element={<NotFound/>}/>
             </Routes>
           </QueryClientProvider>
         </Suspense>
