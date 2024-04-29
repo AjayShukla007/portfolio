@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useQuery } from "react-query";
 import axios from "axios";
+import DOMPurify from "dompurify";
 
 import BlogItems from "./BlogItems.jsx";
 import "./styles/style.css";
@@ -24,6 +25,7 @@ const fetcher = async () => {
 };
 
 function Blog() {
+  // eslint-disable-next-line no-unused-vars
   const { data, isLoading, error } = useQuery("blogData", fetcher);
 
   const [search, setSearch] = useState("");
@@ -34,7 +36,7 @@ function Blog() {
   const [change, setChange] = useState(true);
 
   const handleOnChange = e => {
-    const searchText = e.target.value;
+    const searchText = DOMPurify.sanitize(e.target.value);
     setSearch(searchText);
 
     if (searchText === "" || searchText === "#") {
