@@ -21,6 +21,7 @@ const About = lazy(() => import('./pages/about/About.jsx'));
 //STYLING
 import "./App.css";
 import NotFound from "./pages/utility/404.jsx";
+import Error from "./pages/utility/Error.jsx";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +67,7 @@ getData();
               <Route exact path="/blog" element={<Blog />} />
               <Route exact path="/caseStudies" element={<CaseStudies />} />
               <Route exact path="/about" element={<About />} />
+              <Route exact path="/error" element={<Error/>} />
               <Route exact path="/*" element={<NotFound/>}/>
             </Routes>
           </QueryClientProvider>
