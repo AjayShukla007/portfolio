@@ -1,10 +1,12 @@
-import React, { useEffect, useState, useRef, Suspense, lazy } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   motion,
   useInView
 } from "framer-motion";
 import { TERipple } from "tw-elements-react";
 import DOMPurify from 'dompurify';
+import PropTypes from 'prop-types';
+
 import { SourceLink, LiveLink } from '../../assets/Icons.jsx';
 
 function ProjectItems(props) {
@@ -156,14 +158,14 @@ function ProjectItems(props) {
             </motion.div>
             <div className="link">
               {props.live !== '$' && (<div className="liveLink">
-                <a target='_blank' id='live' href={props.live}>
+                <a target='_blank' id='live' href={props.live} rel="noreferrer">
                   live
                   <LiveLink />
                 </a>
               </div>)}
               <div className="sourceCode">
                 {/* <Suspense fallback={<span>...</span>}>*/}
-                <a target='_blank' href={props.source}>
+                <a target='_blank' href={props.source} rel="noreferrer">
                   source
                   <SourceLink />
                 </a>
@@ -211,6 +213,16 @@ function ProjectItems(props) {
       </TERipple>
     </>
   );
+}
+
+ProjectItems.propTypes = {
+  image: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  source: PropTypes.string,
+  live: PropTypes.string,
+  lang: PropTypes.array,
+  scrollPosition: PropTypes.number
 }
 
 export default ProjectItems;
