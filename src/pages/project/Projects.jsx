@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   motion,
   useTransform,
@@ -9,7 +9,6 @@ import axios from "axios";
 
 import "./styles/projects.css";
 import ProjectItems from "./ProjectItems.jsx";
-// import projectData from "./ProjectData.jsx";
 import useElementScrollVelocity from "../../hook/ScrollVelocity.jsx";
 import ProjectsPreload from '../../components/PreLoaders/ProjectsPreload.jsx';
 const getProjectUrl = import.meta.env.VITE_API_GET_Projects;
@@ -34,7 +33,7 @@ function Projects() {
   const { data, isLoading, error } = useQuery("projectsData", fetcher);
 
   const mainRef = React.useRef(null);
-  const pink = saturation => `hsl(327, ${saturation}%, 50%)`;
+  // const pink = saturation => `hsl(327, ${saturation}%, 50%)`;
   const blur = blur => `blur(${0 || blur}px)`;
 
   const { scrollY } = useScroll({
@@ -49,7 +48,9 @@ function Projects() {
     [-2000, 0, 2000],
     [blur(50), blur(0), blur(10)]
   );
-
+if (isLoading) {
+  console.log("project still loading");
+}
   return (
     <motion.div
       className="allProjects"
