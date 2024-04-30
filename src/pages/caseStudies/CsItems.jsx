@@ -9,7 +9,7 @@ import { useTitleData } from "../../components/context/csContext.jsx";
 const getCsUrl = import.meta.env.VITE_API_GET_CS;
 
 
-function CsItems(props) {
+function CsItems() {
   const { title } = useTitleData();
   const { data, isLoading, error } = useQuery(
     `caseStudiesData${title}`,
