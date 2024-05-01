@@ -3,7 +3,7 @@ import SpacielPage from '../../components/extraPages/ExtraPage'
 const Error = () => {
   return (
     <div>
-        <SpacielPage 
+        <SpacielPage
         header="Error"
         code='Some Unknown Error Occured'
         info={"This may not mean anything. \n \nI'm probably working on something that has blown up"}/>
