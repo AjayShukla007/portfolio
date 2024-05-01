@@ -1,26 +1,25 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import Error from '../../pages/utility/Error';
 
 const ErrorBoundary = ({ children }) => {
   const [error, setError] = useState(null);
 
   const handleError = (error) => {
     setError(error);
+    console.log(error);
   };
 
   useEffect(() => {
-    // Attach error handler during component mount
     window.onerror = handleError;
 
-    // Detach error handler during component cleanup (optional)
     return () => {
       window.onerror = null;
     };
   }, []);
 
   if (error) {
-    // Redirect to error route on error
-    return <h1>error</h1>;
+    return <Error errorCode={error}/>;
   }
 
   return children;
