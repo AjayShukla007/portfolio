@@ -1,50 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types'; // Import PropTypes
-import { useNavigate } from 'react-router-dom'; // Import Redirect
-const useNaviagte = ()=>{
-  const navigate = useNavigate();
-  return navigate;
-}
-// Higher-order component (HOC)
-function withMyHook(Component) {
-  return function WrappedComponent(props) {
-    const myHookValue = useNaviagte();
-    return <Component {...props} myHookValue={myHookValue} />;
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+
+const ErrorBoundary = ({ children }) => {
+  const [error, setError] = useState(null);
+
+  const handleError = (error) => {
+    setError(error);
   };
-}
-class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
+
+  useEffect(() => {
+    // Attach error handler during component mount
+    window.onerror = handleError;
+
+    // Detach error handler during component cleanup (optional)
+    return () => {
+      window.onerror = null;
+    };
+  }, []);
+
+  if (error) {
+    // Redirect to error route on error
+    return <h1>error</h1>;
   }
 
-  static getDerivedStateFromError(error) {
-    console.log(error);
-    return { hasError: true };
-  }
-
-  componentDidCatch(error, errorInfo) {
-    // Log the error or send it to an error reporting service
-    console.error('Error caught:', error, errorInfo);
-  }
-  render() {
-  // eslint-disable-next-line react/prop-types
-  const {navigate} = this.props
-    if (this.state.hasError) {
-      console.log('this is in the boundary');
-      // Redirect to the '/error' route
-      navigate('/error');
-    }
-    return this.props.children;
-  }
-}
-
-// Define prop types
-ErrorBoundary.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.node, // Children can be a single node
-    PropTypes.arrayOf(PropTypes.node), // Or an array of nodes
-  ]).isRequired,
+  return children;
 };
-
-export default withMyHook(ErrorBoundary);
+ErrorBoundary.propTypes = {
+  children: PropTypes.node.isRequired
+}
+export default ErrorBoundary;
