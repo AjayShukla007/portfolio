@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useQuery } from "react-query";
 import axios from "axios";
 import DOMPurify from "dompurify";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import BlogItems from "./BlogItems.jsx";
 import "./styles/style.css";
@@ -131,23 +131,11 @@ function Blog() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [index, data]);
-  const navigate = useNavigate();
-function redirectHandle() {
-  console.log('redirecting');
-  let a = 10;
-  if (a>0) {
-    // return redirect("/error");
-    throw new Error('this is an error')
-    // navigate('/error');
-    
-  }
-}
+  // const navigate = useNavigate();
+
   return (
     <motion.div
       className="allBlogs">
-            <button onClick={redirectHandle} style={{
-            color: 'red'
-          }}>getError</button>
       <div className="searchBpx">
         <input
           type="search"
