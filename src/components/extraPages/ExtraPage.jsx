@@ -13,8 +13,9 @@ const SpacielPage = (props) => {
     // console.log(window.location); //this is for debugging purpos
   }
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
-      <h1>:(</h1><button onClick={refreshPage}>{props.goTo}</button>
+    <div className="relative max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
+      <h1 className='m-0'>:(</h1>
+      <button className='absolute top-2 right-2 text-black' onClick={refreshPage}>{props.goTo}</button>
       <h1 className="text-3xl font-bold text-red-600 mb-4">{props.header}</h1>
       <p className="text-gray-600 mb-4">{props.code}</p>
       <p className="text-gray-500">{props.info}</p>
