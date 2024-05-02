@@ -1,7 +1,15 @@
-
+import SpacielPage from "../../components/extraPages/ExtraPage"
 const NotFound = () => {
   return (
-    <div>NotFound</div>
+    <>
+      <SpacielPage
+        goTo={"Home"}
+        header="404"
+        code={'Oops! Page Not Found'}
+        info={"The page you're looking for doesn't exist"}
+  
+    />
+    </>
   )
 }
 
