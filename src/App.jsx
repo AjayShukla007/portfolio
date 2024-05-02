@@ -22,13 +22,14 @@ const About = lazy(() => import('./pages/about/About.jsx'));
 import "./App.css";
 import NotFound from "./pages/utility/404.jsx";
 import Error from "./pages/utility/Error.jsx";
+import ErrorBoundary from './components/Interactive/ErrorBoundary.jsx';
 
 const queryClient = new QueryClient();
 
 function App() {
   // eslint-disable-next-line no-unused-vars
   const [bgStyle, setBgStyle] = useState({});
-getData();
+  getData();
   const location = useLocation();
   useEffect(() => {
     // console.log(location);
@@ -61,15 +62,17 @@ getData();
           <Nav />
           <Contact />
           <QueryClientProvider client={queryClient}>
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/project" element={<Projects />} />
-              <Route exact path="/blog" element={<Blog />} />
-              <Route exact path="/caseStudies" element={<CaseStudies />} />
-              <Route exact path="/about" element={<About />} />
-              <Route exact path="/error" element={<Error/>} />
-              <Route exact path="/*" element={<NotFound/>}/>
-            </Routes>
+            <ErrorBoundary>
+              <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/project" element={<Projects />} />
+                <Route exact path="/blog" element={<Blog />} />
+                <Route exact path="/caseStudies" element={<CaseStudies />} />
+                <Route exact path="/about" element={<About />} />
+                <Route exact path="/error" element={<Error />} />
+                <Route exact path="/*" element={<NotFound />} />
+              </Routes>
+            </ErrorBoundary>
           </QueryClientProvider>
         </Suspense>
       </div>
