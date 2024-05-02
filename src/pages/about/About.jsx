@@ -33,16 +33,7 @@ const fetcher = async () => {
   }
 };
 function About() {
-  
-  /* const tempFunc = async ()=>{
-    try{
-      const data = await axios.get("https://dev.to/dev-ajayshukla/how-to-create-a-ripple-effect-with-tailwind-elements-react-2338");
-      console.log(data);
-    }catch(err){
-      console.log(err);
-    }
-  } */
-  // tempFunc()
+ 
   const { data, isLoading, error } = useQuery("aboutData", fetcher);
   const aboutRef = useRef(null);
   
