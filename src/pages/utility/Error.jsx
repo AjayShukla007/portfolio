@@ -1,14 +1,18 @@
 import SpacielPage from '../../components/extraPages/ExtraPage'
-//add line breake in info
-const Error = () => {
+import PropTypes from 'prop-types';
+
+const Error = (props) => {
   return (
     <div>
         <SpacielPage
+        goTo={"Refresh"}
         header="Error"
-        code='Some Unknown Error Occured'
+        code={props.errorCode || 'Some Unknown Error Occured'}
         info={"This may not mean anything. \n \nI'm probably working on something that has blown up"}/>
     </div>
   )
 }
-
+Error.propTypes = {
+  errorCode: PropTypes.string,
+}
 export default Error
