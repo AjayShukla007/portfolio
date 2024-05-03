@@ -3,15 +3,11 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import {
   motion,
-  AnimatePresence,
-  useInView,
-  useTransform,
-  useVelocity,
-  useSpring,
-  useScroll,
-  useMotionValueEvent
+  useInView
 } from "framer-motion";
-import {CertPreload} from '../../components/PreLoaders/About.jsx';
+import PropTypes from 'prop-types';
+
+import { CertPreload } from '../../components/PreLoaders/About.jsx';
 const getCertUrl = import.meta.env.VITE_API_GET_CERT;
 
 const fetchCert = async () => {
@@ -29,31 +25,26 @@ const fetchCert = async () => {
 
 function Cert() {
   const { data, isLoading, error } = useQuery("certData", fetchCert);
-  const cl = (message, color) => {
-    console.log(`%c${message}`, `color:${color}`);
-  };
+  // const cl = (message, color) => {
+  //   console.log(`%c${message}`, `color:${color}`);
+  // };
 
-  // const helperRef = useRef(null);
   const certContainerRef = useRef(null);
   const certContainerInView = useInView(certContainerRef);
 
-  const [index, setIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const autoplayInterval = 3000;
 
   function handleScroll() {
-    // cl(data.length, "blue");
-    // console.log(certContainerRef.current.scrollLeft);
     if (
       certContainerRef.current.scrollLeft +
-        certContainerRef.current.clientWidth >=
+      certContainerRef.current.clientWidth >=
       certContainerRef.current.scrollWidth
     ) {
-      // data.push(data);
-      setTimeout(()=>{
-      certContainerRef.current.scrollLeft = "0";
-      },2000);
-      
+      setTimeout(() => {
+        certContainerRef.current.scrollLeft = "0";
+      }, 2000);
+
       // cl("works","green")
       // cl(data.length,'blue')
     }
@@ -70,7 +61,7 @@ function Cert() {
       return () => clearInterval(interval);
     }
   }, [data, autoplayInterval, isHovered]);
-  // this is for certConatiner
+  // this is for certContainer
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -93,34 +84,18 @@ function Cert() {
     text: "Please note that while these certificates contain all essential details, they are replicas and not indicative of the original certifications for data privacy. The purpose is to showcase necessary information without disclosing sensitive or proprietary data."
   };
   let tempArr = [];
-  (()=>{
-  let i =0;
-  while(i<=10){
-    tempArr.push(i);
-    i++
-  }
-  // console.log(tempArr);
+  (() => {
+    let i = 0;
+    while (i <= 10) {
+      tempArr.push(i);
+      i++
+    }
   })()
-  // transition={{
-  //   x: {
-  //     duration: 0.3,
-  //     ease: 'linear',
-  //     repeat: 0,
-  //     type: 'spring',
-  //     stiffness: 80,
-  //   },
-  //   y: {
-  //     duration: 0.3,
-  //     ease: 'linear',
-  //     repeat: 0,
-  //     type: 'spring',
-  //     stiffness: 80,
-  //   },
-  //   default: {
-  //     duration: 2.5,
-  //     repeat: Infinity,
-  //   },
-  // }}
+
+  if (error && !isLoading) {
+    throw new Error(error)
+  }
+  
   return (
     <>
       <h1
@@ -145,7 +120,6 @@ function Cert() {
             }}
             transition={{
               duration: 2.5
-              // repeat: Infinity,
             }}
           >
             i
@@ -193,13 +167,12 @@ function Cert() {
           })
         ) : (
           tempArr.map((index) => (
-            
-            <CertPreload key={index}/>
-            
-            ))
+
+            <CertPreload key={index} />
+
+          ))
         )}
       </motion.div>
-      {/*<div className="helper" ref={helperRef}></div>*/}
     </>
   );
 }
@@ -260,6 +233,14 @@ const CertItem = props => {
     </motion.div>
   );
 };
-
+CertItem.propTypes = {
+  type: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  provider: PropTypes.string,
+  learned: PropTypes.string,
+  date: PropTypes.string,
+  certContainerRef: PropTypes.node,
+}
 export { CertItem };
 export default Cert;
