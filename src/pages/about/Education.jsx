@@ -1,7 +1,9 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { useQuery } from "react-query";
 import axios from "axios";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
+import PropTypes from 'prop-types';
+
 import { OverLay } from "./Intro.jsx";
 import {EduPreLoad} from '../../components/PreLoaders/About.jsx';
 const getEduUrl = import.meta.env.VITE_API_GET_EDU;
@@ -22,11 +24,9 @@ function Edu() {
   const { data, isLoading, error } = useQuery("eduData", fetchEdu);
   const eduName = useRef(null);
   const eduNameInView = useInView(eduName);
-
-
-  // useEffect(() => {
-  //   console.log(eduInView);
-  // }, [eduInView]);
+  if (error && !isLoading) {
+    throw new Error(error)
+  }
   return (
     <>
     <h1 ref={eduName} style={{
@@ -115,6 +115,13 @@ const EduItems = props => {
     </>
   );
 };
-
+EduItems.propTypes = {
+  collage: PropTypes.string,
+  year: PropTypes.string,
+  name: PropTypes.string,
+  location: PropTypes.string,
+  date: PropTypes.string,
+  index: PropTypes.number,
+}
 export { EduItems };
 export default Edu;
