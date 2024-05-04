@@ -69,8 +69,9 @@ const Mail = () => {
           headers
         });
         //console.log(response.data);
-
-        setStatus(<span style={{ color: "green" }}>message send</span>);
+        if(response) {
+          setStatus(<span style={{ color: "green" }}>message send</span>);
+        }
 
         // Redirect or perform other actions upon successful login
         captchaRef.current.reset();
