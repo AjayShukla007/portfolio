@@ -72,7 +72,7 @@ function Intro(props) {
           {introThree}
           <OverLay
             inViewRef={introThreeInView}
-            inView={introInViewOnce}
+            canInView={introInViewOnce}
             length={99}
           />
         </h4>
@@ -80,7 +80,9 @@ function Intro(props) {
     </>
   );
 }
-
+Intro.propTypes = {
+  intro: PropTypes.string
+}
 const OverLay = props => {
   const divRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
@@ -101,7 +103,7 @@ const OverLay = props => {
     setOpacity(1);
   };
 
-  const handleBlur = => {
+  const handleBlur = () => {
     setIsFocused(false);
     setOpacity(0);
   };
@@ -119,7 +121,7 @@ const OverLay = props => {
       <div
         className="baseLine line"
         style={{
-          opacity: props.inView ? 1 : 0,
+          opacity: props.canInView ? 1 : 0,
           transform: props.inViewRef
             ? "translateX(0%)"
             : `translateX(${props.length}%)`
@@ -150,9 +152,7 @@ OverLay.propTypes = {
   introRef: PropTypes.node,
   inViewRef: PropTypes.node,
   length: PropTypes.string,
-  location: PropTypes.string,
-  date: PropTypes.string,
-  index: PropTypes.number,
+  canInView: PropTypes.string
 }
 export { OverLay };
 export default Intro;
