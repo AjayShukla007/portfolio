@@ -1,12 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import {
-  motion,
-  useScroll,
-  useAnimation,
-  useTransform,
-  useInView,
-  useSpring
+  useInView
 } from "framer-motion";
+import PropTypes from 'prop-types';
 
 function Intro(props) {
   const intros = props.intro.split("$");
@@ -105,7 +101,7 @@ const OverLay = props => {
     setOpacity(1);
   };
 
-  const handleBlur = e => {
+  const handleBlur = => {
     setIsFocused(false);
     setOpacity(0);
   };
@@ -150,19 +146,13 @@ const OverLay = props => {
     </>
   );
 };
-
+OverLay.propTypes = {
+  introRef: PropTypes.node,
+  inViewRef: PropTypes.node,
+  length: PropTypes.string,
+  location: PropTypes.string,
+  date: PropTypes.string,
+  index: PropTypes.number,
+}
 export { OverLay };
 export default Intro;
-// return (
-// <>
-//   <h4 className="introOne">
-//     Hey there, I'm Ajay Shukla! When it comes to tech and creating awesome things online, I’m all in. I’ve dabbled in different languages and tech tools, weaving them together to build digital experiences that stand out.
-//   </h4>
-//   <h4 className="introTwo">
-//     But it's not just about the code. though. Being a part of real-world projects and internships has been a blast. I've learned heaps about teamwork, problem-solving, and making tech work for people. I’m all about that ‘aha’ moment when everything just clicks together.
-//   </h4>
-//   <h4 className="introThree">
-//     So, if you're looking for someone who's passionate about crafting awesome web solutions and enjoys the journey just as much as the destination, I'm your person! Let's team up and make some digital wonders happen!
-//   </h4>
-// </>
-// )
