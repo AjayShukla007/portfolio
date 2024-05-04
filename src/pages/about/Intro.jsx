@@ -149,10 +149,15 @@ const OverLay = props => {
   );
 };
 OverLay.propTypes = {
-  introRef: PropTypes.node,
-  inViewRef: PropTypes.node,
-  length: PropTypes.string,
-  canInView: PropTypes.string
+  introRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({
+      current: PropTypes.instanceOf(Element),
+    }),
+  ]),
+  inViewRef: PropTypes.bool,
+  length: PropTypes.number,
+  canInView: PropTypes.bool
 }
 export { OverLay };
 export default Intro;
