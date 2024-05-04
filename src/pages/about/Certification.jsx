@@ -240,7 +240,12 @@ CertItem.propTypes = {
   provider: PropTypes.string,
   learned: PropTypes.string,
   date: PropTypes.string,
-  certContainerRef: PropTypes.node,
+  certContainerRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({
+      current: PropTypes.instanceOf(Element),
+    }),
+  ]),
 }
 export { CertItem };
 export default Cert;
