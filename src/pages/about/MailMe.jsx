@@ -89,13 +89,7 @@ const Mail = () => {
 
   const inputRef = useRef(null)
   const { mailTo } = useTitleData();
-  /* useEffect(() => {
-    if(location.state && location.state.scrollToInput){
-      inputRef.current.scrollIntoView({behavior: 'smooth'})
-      console.log('is scroled to the input');
-      
-    }
-  }, [location]) */
+  
   useEffect(() => {
     if(mailTo){
       inputRef.current.scrollIntoView({behavior: 'smooth'})
