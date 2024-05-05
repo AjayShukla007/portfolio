@@ -88,7 +88,6 @@ const Mail = () => {
 
 
   const inputRef = useRef(null)
-  const location = useLocation()
   const { mailTo } = useTitleData();
   /* useEffect(() => {
     if(location.state && location.state.scrollToInput){
