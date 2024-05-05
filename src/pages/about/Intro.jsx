@@ -42,7 +42,7 @@ function Intro(props) {
           {introOne}
           <OverLay
             inViewRef={introOneInView}
-            inView={introInViewOnce}
+            canInView={introInViewOnce}
             length={99}
           />
         </h4>
@@ -57,7 +57,7 @@ function Intro(props) {
           {introTwo}
           <OverLay
             inViewRef={introTwoInView}
-            inView={introInViewOnce}
+            canInView={introInViewOnce}
             length={-99}
           />
         </h4>
@@ -115,7 +115,6 @@ const OverLay = props => {
   const handleMouseLeave = () => {
     setOpacity(0);
   };
-
   return (
     <>
       <div
