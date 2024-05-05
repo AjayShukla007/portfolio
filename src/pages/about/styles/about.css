@@ -1,17 +1,12 @@
 .aboutContainer {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   position: absolute;
   left: 0;
-  /* background: red; */
   flex-direction: column;
   /* color: #a8a8a8; */
   color: #cbcbcb;
   overflow: hidden;
-  /* scroll-snap-type: y mandatory;
-  overflow: scroll;
-  height:70vh; */
 }
 /* .aboutItems{
   
@@ -22,7 +17,6 @@
   text-align: center;
 }
 .intros h4 {
-  /* border: 1px solid red; */
   opacity: 0;
   transition: 0.8s linear all;
   margin: 1.5em 1.2em;
@@ -67,7 +61,6 @@
   margin-bottom: 100px;
   position: relative;
   overflow: hidden;
-  webkit-tap-highlight-color: none;
   /* width: 100vmin;
   height: 100vmin; */
   width: 100vw;
@@ -85,15 +78,12 @@
   will-change: transform, opacity, filter;
 }
 .tag-cloud__item:hover {
-  /* color: red; */
   scale: 1.1;
   transform: scale(1.1);
 }
 
 .eduContainer {
   position: relative;
-  /* display: flex;
-  flex-direction: column; */
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 0.8fr 1fr;
@@ -110,7 +100,6 @@
 .collage{
   text-align: left;
   padding: 0 0 0 0.2em;
-  /* border: 1px solid red; */
   transition: 0.8s linear all;
 }
 .year{
@@ -122,7 +111,6 @@
   text-align: left;
   padding: 0 0 0 0.6em;
   color: #b2b2b2;
-  /* border: 1px solid red; */
   transition: 0.8s linear all;
 }
 .location{
@@ -132,7 +120,6 @@
 }
 
 .certContainer{
-  /* border: 1px solid red; */
   width: 100vw;
   height: 15em;
   margin: 50px 0;
@@ -153,15 +140,11 @@
   height: 15em;
   margin: 50px 0;
   width: 80%;
-  /* border: 1px solid red; */
-  /* transform: translateY(calc(-100% - 100px)); */
-  /* transform: translateY(-100%); */
 }
 .certItem{
   position: relative;
   transition: 0.8s linear all;
   /* scroll-snap-align: start; */
-  /* scroll-snap-points-x: 10; */
   background: #ffffff;
   width: 20em;
   height: 15em;
@@ -169,7 +152,6 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  /* filter: hue-rotate(120deg); */
 }
 .type{
   z-index: 5;
@@ -246,8 +228,6 @@
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* white-space: nowrap; */ /* Prevent text from wrapping */
-  /* display: flex; */
   
 }
 .date{
@@ -258,18 +238,11 @@
   color: #655136;
   
 }
-/*
-.learned{
-  overflow-y: scroll;
-  padding: 0.2em 0.3em;
-} */
-
 .certInfo{
   display: flex;
   width: 100%;
   height: 1.2em;
   /* background: #4b4b4b; */
-  /* border-bottom: 1px solid white; */
   flex-direction: row;
   color: #7a7a7a;
   font-size: 0.6em;
@@ -314,8 +287,6 @@
 }
 .certInfoText{
   position: relative;
-  /* display: flex; */
-  /* flex-direction: column; */
   display: grid;
 }
 .certInfoTextShort{
@@ -338,11 +309,7 @@
 
 .contactInput{
   display: flex;
-  /* align-items: center; */
-  /* justify-content: center; */
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  /* height: 150vh; */
   height: 100vh;
   width: 100%;
   max-width: 1000px;
@@ -352,7 +319,6 @@
 .contactForm{
   background: #222222;
   border-radius: 12.5px;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   gap: 0.2em;
@@ -404,16 +370,10 @@
 
 .submitBtn{
   color: white;
-  /* border: 1px solid blue; */
   background: #4378ff !important;
   flex: 3;
-  /* flex-grow: 3; */
-  /* height: 4.8em; */
 }
 .quote2{
-  /* position: absolute; */
-  /* bottom: 10px; */
-  /* left: 5px; */
   z-index: 20;
   text-align: center;
   padding: 4% 8%;
