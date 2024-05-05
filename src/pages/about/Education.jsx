@@ -111,7 +111,7 @@ const EduItems = props => {
           {props.location}
         </div>
       </div>
-      <OverLay inViewRef={nameInView} inView={eduInView} length={dirArray[props.index]} />
+      <OverLay inViewRef={nameInView} canInView={eduInView} length={dirArray[props.index]} />
     </>
   );
 };
