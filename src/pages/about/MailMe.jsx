@@ -1,11 +1,9 @@
 import { useRef, useEffect, useState } from "react";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
-import { useLocation } from "react-router-dom";
 import { useTitleData } from '../../components/context/csContext';
 const siteKeyUrl = import.meta.env.VITE_API_PORTFOLIO_SITE_KEY;
 const getInTouchUrl = import.meta.env.VITE_API_GETIN_TOUCH;
-const getInVerifyUrl = import.meta.env.VITE_API_GETIN_VERIFY;
 
 const Mail = () => {
   const [credentials, setCredentials] = useState({
@@ -25,9 +23,8 @@ const Mail = () => {
     });
   };
 
-  const handleCaptcha = async e => {
+  const handleCaptcha = async () => {
     // e.preventDefault();
-    const head = await sessionStorage.getItem("authToken");
     const token = await captchaRef.current.getValue();
     // captchaRef.current.reset();
     await setCredentials({
@@ -35,20 +32,6 @@ const Mail = () => {
       token: token
     });
     
-    // if (head && token) {
-    //   try {
-    //     const headers = {
-    //       authToken: `${head}`
-    //     };
-    //     const verifyBot = await axios.post(getInVerifyUrl, credentials.token, {
-    //       headers
-    //     });
-    //     console.log(verifyBot.data);
-    //   } catch (e) {
-    //     console.log("error " + e);
-    //   }
-    // }
-    // console.log(credentials);
   };
   const handleSubmit = async e => {
     e.preventDefault();
@@ -73,7 +56,6 @@ const Mail = () => {
           setStatus(<span style={{ color: "green" }}>message send</span>);
         }
 
-        // Redirect or perform other actions upon successful login
         captchaRef.current.reset();
       } catch (error) {
         console.log(error);
