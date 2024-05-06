@@ -1,53 +1,53 @@
 import { useRef, useEffect, useState, useCallback, memo } from "react";
 
 const Skills = memo((props) => {
-  
-const texts = props.skills.split(',');
-const textColor = props.color.split(',');
-const computePosition = (idx, random = false, size) => {
-  if (random) idx = Math.floor(Math.random() * (texts.length + 1));
 
-  const phi = Math.acos(-1 + (2 * idx + 1) / texts.length);
-  const theta = Math.sqrt((texts.length + 1) * Math.PI) * phi;
+  const texts = props.skills.split(',');
+  const textColor = props.color.split(',');
+  const computePosition = (idx, random = false, size) => {
+    if (random) idx = Math.floor(Math.random() * (texts.length + 1));
 
-  return {
-    x: (size * Math.cos(theta) * Math.sin(phi)) / 2,
-    y: (size * Math.sin(theta) * Math.sin(phi)) / 2,
-    z: (size * Math.cos(phi)) / 2
+    const phi = Math.acos(-1 + (2 * idx + 1) / texts.length);
+    const theta = Math.sqrt((texts.length + 1) * Math.PI) * phi;
+
+    return {
+      x: (size * Math.cos(theta) * Math.sin(phi)) / 2,
+      y: (size * Math.sin(theta) * Math.sin(phi)) / 2,
+      z: (size * Math.cos(phi)) / 2
+    };
   };
-};
 
-const createTag = (idx, text, size) => {
-  const tagRef = useRef(null);
+  const createTag = (idx, text, size) => {
+    const tagRef = useRef(null);
 
-  return {
-    idx: idx,
-    text: text,
-    opacity: 0,
-    filter: "alpha(opacity=0)",
-    transform: "translate3d(-50%, -50%, 0) scale(1)",
-    tagRef: tagRef,
-    ...computePosition(idx, false, size)
+    return {
+      idx: idx,
+      text: text,
+      opacity: 0,
+      filter: "alpha(opacity=0)",
+      transform: "translate3d(-50%, -50%, 0) scale(1)",
+      tagRef: tagRef,
+      ...computePosition(idx, false, size)
+    };
   };
-};
 
-const createInitialState = size => {
-  return texts.map((text, i) => {
-    return createTag(i, text, size);
-  });
-};
+  const createInitialState = size => {
+    return texts.map((text, i) => {
+      return createTag(i, text, size);
+    });
+  };
 
-const { radius, maxSpeed, initSpeed, direction } = {
-  radius: 300,
-  maxSpeed: 20,
-  initSpeed: 40,
-  direction: 135
-};
+  const { radius, maxSpeed, initSpeed, direction } = {
+    radius: 300,
+    maxSpeed: 20,
+    initSpeed: 40,
+    direction: 135
+  };
 
-const size = 1.5 * radius;
-const depth = 2 * radius;
+  const size = 1.5 * radius;
+  const depth = 2 * radius;
 
-  
+
   const tagCloudRef = useRef(null);
   const [items, setItems] = useState(createInitialState(size));
 
@@ -132,22 +132,22 @@ const depth = 2 * radius;
       }}
     >
       {items.map((item, i) => {
-        const hexClr =()=>"#"+Math.floor(Math.random()*0xffff).toString(16).padEnd(6, '0');
-        
+        const hexClr = () => "#" + Math.floor(Math.random() * 0xffff).toString(16).padEnd(6, '0');
+
         return (
           <span
             key={item.idx}
             className="tag-cloud__item"
             ref={item.tagRef}
             style={{
-              color:textColor[i],
+              color: textColor[i],
               filter: item.filter,
               opacity: item.opacity,
               transform: item.transform
             }}
           >
             {item.text}
-          
+
           </span>
         );
       })}
@@ -156,16 +156,3 @@ const depth = 2 * radius;
 });
 
 export default Skills;
-
-// interface ItemProps {
-//   transform: string
-//   opacity: number
-//   filter: string
-//   idx: number
-//   text: string
-//   x: number
-//   y: number
-//   z: number
-//   scale?: number
-//   tagRef?: React.RefObject<HTMLSpanElement>
-// }
