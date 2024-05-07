@@ -8,7 +8,6 @@ import { useTitleData } from "../../components/context/csContext.jsx";
 
 const getCsUrl = import.meta.env.VITE_API_GET_CS;
 
-
 function CsItems() {
   const { title } = useTitleData();
   const { data, isLoading, error } = useQuery(
@@ -26,9 +25,6 @@ function CsItems() {
               headers
             }
           );
-          // if (!res.ok) {
-          //   throw new Error('Unable to fetch data');
-          // }
           return res.data;
         }
       } catch (e) {
@@ -66,7 +62,9 @@ function CsItems() {
       </>
     );
   };
-
+  if (error && !isLoading) {
+    throw new Error(error)
+  }
   return (
     <>
       {data ? (
@@ -87,13 +85,11 @@ function CsItems() {
                 style={{
                   width: "100%",
                   height: "30%"
-                  // overflow: "visible"
                 }}
               >
                 <ReactFlow
                   nodes={initialNodes}
                   edges={initialEdges}
-                  // nodesDraggable={true}
                   minZoom={1}
                   maxZoom={1}
                   panOnScroll={true}
