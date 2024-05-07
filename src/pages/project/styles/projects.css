@@ -33,7 +33,6 @@
   position: relative;
   z-index: 50;
   border-top-left-radius: 10px;
-  /* overflow-y: scroll; */
 }
 
 .projectImage div {
@@ -53,7 +52,6 @@
 
 .projectDetaills {
   color: #ffffff;
-  /* border: 1px solid blue; */
   width: 44vw;
   height: 35vmin;
   text-align: right;
@@ -190,13 +188,11 @@
   margin: 5% 25%;
   gap: 10px;
   overflow: scroll;
-  /* border: 1px solid red; */
 }
 
 .link a {
   color: grey;
   display: flex;
-  /* webkit-tap-highlight-color: none; */
   text-decoration: none;
 }
 
