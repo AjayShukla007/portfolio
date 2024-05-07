@@ -48,9 +48,9 @@ function Projects() {
     [-2000, 0, 2000],
     [blur(50), blur(0), blur(10)]
   );
-if (isLoading) {
-  console.log("project still loading");
-}
+  if (error && !isLoading) {
+    throw new Error(error)
+  }
   return (
     <motion.div
       className="allProjects"
