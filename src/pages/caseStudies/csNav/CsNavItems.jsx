@@ -1,4 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
+import PropTypes from 'prop-types';
+
 import { useTitleData } from "../../../components/context/csContext.jsx";
 
 function CsNavItems(props) {
@@ -28,5 +30,8 @@ function CsNavItems(props) {
     </>
   );
 }
-
+CsNavItems.propTypes = {
+  innerData: PropTypes.string,
+  id: PropTypes.number,
+}
 export default CsNavItems;
