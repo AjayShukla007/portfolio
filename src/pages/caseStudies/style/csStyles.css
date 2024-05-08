@@ -98,12 +98,6 @@
 }
 
 .react-flow__node {
-  /* width: clamp(6rem,8vh,8rem);
-  height: clamp(1rem,2vh,2rem);
-  font-size: clamp(0.5rem,1vh,1rem);
-  display: flex;
-  justify-content: center;
-  align-items: center; */
   pointer-events: none !important;
   touch-action: none !important;
 }
