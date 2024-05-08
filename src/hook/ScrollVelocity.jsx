@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useMotionValue } from 'framer-motion';
 
 export default function useElementScrollVelocity(ref) {
