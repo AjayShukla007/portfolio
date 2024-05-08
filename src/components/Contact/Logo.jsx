@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import Vara from "vara";
+import PropTypes from 'prop-types';
 
 function Logo({ text }) {
   const varaRef = useRef(null);
@@ -28,5 +29,7 @@ function Logo({ text }) {
 
   return <div id="vara-container" className="z-[20] logo"></div>;
 }
-
+Logo.propTypes = {
+  text: PropTypes.string
+}
 export default Logo;
