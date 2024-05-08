@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { ReactIcon, JavascriptIcon, NodeIcon, ExpressIcon, MongoIcon, CSSIcon, TypeScriptIcon, LettA } from '../../assets/Icons.jsx';
+import { ReactIcon, JavascriptIcon, NodeIcon, ExpressIcon, MongoIcon, CSSIcon, TypeScriptIcon} from '../../assets/Icons.jsx';
 
 function Icon() {
 
