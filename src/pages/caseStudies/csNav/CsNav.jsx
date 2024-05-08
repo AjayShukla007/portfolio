@@ -2,13 +2,10 @@ import axios from 'axios';
 import { useQuery } from "react-query";
 
 import CsNavItems from "./CsNavItems.jsx";
-import { useState } from 'react';
 
 const getCsTitleUrl = import.meta.env.VITE_API_GET_CSTITLE;
 
-
 const fetchCsTitles = async () => {
-
   const head = await sessionStorage.getItem("authToken");
   if (head) {
     const headers = {
@@ -20,29 +17,18 @@ const fetchCsTitles = async () => {
         headers
       }
     );
-    // return res.data.reverse();
     return res.data;
   }
 };
 
-function CsNav(props) {
+function CsNav() {
   const { data, isLoading, error } = useQuery(
     "caseStudiesTitleData",
     fetchCsTitles
   );
-  const [csNavActive, setCsNavActive] = useState(false)
-
-
-  const handleNavClick = () => {
-    if (csNavActive) {
-      setCsNavActive(false)
-      console.log('white');
-    } else {
-      setCsNavActive(true)
-      console.log('red');
-    }
+  if (error && !isLoading) {
+    throw new Error(error)
   }
-
   return (
     <>
       <div className="CsNav">
