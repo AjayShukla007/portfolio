@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
+import PropTypes from 'prop-types';
 
 // const quotes = [
 //     {
@@ -35,12 +36,8 @@ function Quotes(props) {
   const [index, setIndex] = useState(maxIndex);
   const [anime, setAnime] = useState([1,1]);
   
-  let temptIndex;
   useEffect(() => {
-    // const changeQuotes = ()=>{
-     
-    // }
-    
+
     const changing = setInterval(()=>{
       setAnime([1,0,1]);
       setTimeout(()=>{
@@ -53,7 +50,7 @@ function Quotes(props) {
     return ()=>{
       clearInterval(changing);
     }
-  }, [index]);
+  }, [index, quotes.length]);
   return (
     <>
     <motion.q
@@ -100,13 +97,7 @@ function Quotes(props) {
     </>
   );
 }
-      // {quotes
-      //   ? quotes.map(e => (
-      //       <>
-      //         <q>{e.quote}</q>
-      //         <q>{e.author}</q>
-      //       </>
-      //     ))
-      //   : "loading"}
-
+Quotes.propTypes = {
+  quotes: PropTypes.array
+}
 export default Quotes;
