@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { motion, useSpring, useInView } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { TERipple } from "tw-elements-react";
 
 function ProjectsPreload() {
