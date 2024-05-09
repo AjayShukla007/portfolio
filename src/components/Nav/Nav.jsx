@@ -1,25 +1,15 @@
-import { useState } from "react";
-import { m } from "framer-motion";
 import NavItem from "./NavItems.jsx";
 import NavItemsBg from "./NavItemsBg.jsx";
 import "./styles/Nav.css";
 
 function Nav() {
-  // variants={variants3}
-  // const navItems = ["p","b","t","c"]
-
-
-  const handleLinkClick = linkId => {
-    setActiveLink(linkId);
-    // console.log(linkId);
-  };
 
   const navItems = [
-    { p: "H", link: "/", tooltip:"Home" },
-    { p: "P", link: "/project", tooltip:"Project" },
-    { p: "B", link: "/blog", tooltip:"Blog" },
-    { p: "C", link: "/caseStudies", tooltip:"caseStudies" },
-    { p: "A", link: "/about", tooltip:"About" }
+    { p: "H", link: "/", tooltip: "Home" },
+    { p: "P", link: "/project", tooltip: "Project" },
+    { p: "B", link: "/blog", tooltip: "Blog" },
+    { p: "C", link: "/caseStudies", tooltip: "caseStudies" },
+    { p: "A", link: "/about", tooltip: "About" }
   ];
 
   return (
@@ -27,11 +17,11 @@ function Nav() {
       <nav className="Navcontainer">
         <div className="navIcons">
           {navItems.map((e, i) => (
-            <NavItem 
-            icon={e.p} 
-            key={i} 
-            link={e.link}
-            tooltip={e.tooltip}
+            <NavItem
+              icon={e.p}
+              key={i}
+              link={e.link}
+              tooltip={e.tooltip}
             />
           ))}
         </div>
@@ -44,22 +34,3 @@ function Nav() {
 }
 
 export default Nav;
-
-/*
-
-      <m.h2
-      animate={{
-        scale:[1, 0.9, 1, 1.2, 1]
-      }}
-      transition={{
-        delay: 1.5,
-        ease: "linear",
-        duration: 2
-      }}
-      whileTap={{
-        scale:1.5
-      }}
-      layout
-      >this is nav
-      </m.h2>
-*/
