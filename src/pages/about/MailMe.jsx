@@ -1,6 +1,8 @@
 import { useRef, useEffect, useState } from "react";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
+import DOMPurify from "dompurify";
+
 import { useTitleData } from '../../components/context/csContext';
 const siteKeyUrl = import.meta.env.VITE_API_PORTFOLIO_SITE_KEY;
 const getInTouchUrl = import.meta.env.VITE_API_GETIN_TOUCH;
@@ -19,7 +21,7 @@ const Mail = () => {
   const handleChange = e => {
     setCredentials({
       ...credentials,
-      [e.target.name]: e.target.value
+      [e.target.name]: DOMPurify.sanitize(e.target.value)
     });
   };
 
@@ -35,7 +37,6 @@ const Mail = () => {
   };
   const handleSubmit = async e => {
     e.preventDefault();
-    // console.log(token);
     const head = await sessionStorage.getItem("authToken");
     const token = await captchaRef.current.getValue();
        await setCredentials({
