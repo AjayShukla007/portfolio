@@ -61,8 +61,6 @@
   margin-bottom: 100px;
   position: relative;
   overflow: hidden;
-  /* width: 100vmin;
-  height: 100vmin; */
   width: 100vw;
   height: 60vh;
   color: #ffffff;
@@ -144,7 +142,6 @@
 .certItem{
   position: relative;
   transition: 0.8s linear all;
-  /* scroll-snap-align: start; */
   background: #ffffff;
   width: 20em;
   height: 15em;
