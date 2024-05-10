@@ -5,7 +5,6 @@ import Icon from './Icons.jsx';
 import QuotesHome from '../../components/Quotes/Quotes1.jsx';
 import Time from '../../components/Interactive/time.jsx';
 
-
 function Home() {
 
   return (
