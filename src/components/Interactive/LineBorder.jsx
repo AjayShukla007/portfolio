@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 function LineBorder() {
 
@@ -161,7 +161,7 @@ function compileShader (type, source) {
         throw gl.getShaderInfoLog(shader);
 
     return shader;
-};
+}
 const baseVertexShader = compileShader(gl.VERTEX_SHADER, `
     precision highp float;
     precision mediump sampler2D;
@@ -732,7 +732,6 @@ window.removeEventListener('touchend', (e) => {
       color:'white',
       zIndex:10,
     }}
-      text="ajay"
     >Ajay</canvas>
     </>
   );
