@@ -1,5 +1,5 @@
-import React, { createContext, useContext, useState } from "react";
-
+import { createContext, useContext, useState } from "react";
+import PropTypes from 'prop-types';
 const MyCsContext = createContext();
 
 const MyProvider = ({ children }) => {
@@ -11,5 +11,8 @@ const MyProvider = ({ children }) => {
 
 const useTitleData = () => {
   return useContext(MyCsContext);
+}
+MyProvider.propTypes = {
+  children: PropTypes.node
 }
 export {MyProvider, useTitleData}
