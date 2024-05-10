@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { motion, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
+
 function IntroPreload() {
   return (
     <>
@@ -69,11 +69,11 @@ function SkillsPreLoad() {
       position: 'relative',
       overflow: 'hidden',
       width: '100vw',
-      height:'60vh',
+      height: '60vh',
     }}>
-      
+
     </div>
-    )
+  )
 }
 function CertPreload() {
   return (
@@ -193,50 +193,50 @@ function EduPreLoad() {
           textAlign: 'center',
           borderTop: '1px solid #808080',
           fontSize: '1.4em',
-          padding:'0.5% 1%',
+          padding: '0.5% 1%',
           margin: '0.3em 0',
           overflow: 'hidden',
           width: '100%',
-          gap:'2px'
+          gap: '2px'
         }}
       >
         <motion.div
           style={{
-            width:'70%',
-            height:'0.6em',
+            width: '70%',
+            height: '0.6em',
             background: "#808080",
             textAlign: 'left',
             margin: '0 0 0 0.2em',
             borderRadius: '20px',
           }}
           animate={{
-          opacity: [0.7, 1, 0.7]
-        }}
-        transition={{
-          ease: "linear",
-          delay: 1.5,
-          duration: 2.5,
-          repeat: Infinity
-        }}
+            opacity: [0.7, 1, 0.7]
+          }}
+          transition={{
+            ease: "linear",
+            delay: 1.5,
+            duration: 2.5,
+            repeat: Infinity
+          }}
         ></motion.div>
         <motion.div
           style={{
             // position:'absolute',
             // right:'0',
-            width:'10%',
-            margin:'0 0 0 90%',
+            width: '10%',
+            margin: '0 0 0 90%',
             borderRadius: '20px',
             background: "#808080",
           }}
           animate={{
-          opacity: [0.7, 1, 0.7]
-        }}
-        transition={{
-          ease: "linear",
-          delay: 1.5,
-          duration: 2.5,
-          repeat: Infinity
-        }}
+            opacity: [0.7, 1, 0.7]
+          }}
+          transition={{
+            ease: "linear",
+            delay: 1.5,
+            duration: 2.5,
+            repeat: Infinity
+          }}
         ></motion.div>
         <motion.div
           style={{
@@ -245,31 +245,31 @@ function EduPreLoad() {
             borderRadius: '20px',
           }}
           animate={{
-          opacity: [0.7, 1, 0.7]
-        }}
-        transition={{
-          ease: "linear",
-          delay: 2.5,
-          duration: 2.5,
-          repeat: Infinity
-        }}
+            opacity: [0.7, 1, 0.7]
+          }}
+          transition={{
+            ease: "linear",
+            delay: 2.5,
+            duration: 2.5,
+            repeat: Infinity
+          }}
         ></motion.div>
         <motion.div
           style={{
-            width:'15%',
-            margin:'0 0 0 85%',
+            width: '15%',
+            margin: '0 0 0 85%',
             background: "#808080",
             borderRadius: '20px',
           }}
           animate={{
-          opacity: [0.7, 1, 0.7]
-        }}
-        transition={{
-          ease: "linear",
-          delay: 2.5,
-          duration: 2.5,
-          repeat: Infinity
-        }}
+            opacity: [0.7, 1, 0.7]
+          }}
+          transition={{
+            ease: "linear",
+            delay: 2.5,
+            duration: 2.5,
+            repeat: Infinity
+          }}
         ></motion.div>
       </div>
     </>
