@@ -10,10 +10,6 @@ const getData = async () => {
   };
   try {
     const response = await axios.post(authUrl, credentials);
-    // console.log(response.data);
-    const headers = {
-      authToken: `${response.data.authToken}`
-    };
     sessionStorage.setItem("authToken", response.data.authToken);
   } catch (error) {
     console.log(error);
