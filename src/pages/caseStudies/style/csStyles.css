@@ -45,7 +45,6 @@
   padding: 0.8em;
   text-align: center;
   font-size: clamp(0.5rem, 2vh, 1rem);
-
 }
 
 .csTitle {
@@ -56,7 +55,6 @@
   font-size: clamp(0.5rem, 2vh, 1rem);
   color: #fff;
   margin: 1em 0 0 0;
-
 }
 
 .csFlow {
