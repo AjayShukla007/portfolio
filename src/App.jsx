@@ -1,8 +1,8 @@
 //MODULES
-import { useState, useEffect, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 // import { LazyMotion, domAnimation } from "framer-motion";
 import { MyProvider } from './components/context/csContext.jsx';
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 
@@ -27,34 +27,8 @@ import ErrorBoundary from './components/Interactive/ErrorBoundary.jsx';
 const queryClient = new QueryClient();
 
 function App() {
-  // eslint-disable-next-line no-unused-vars
-  const [bgStyle, setBgStyle] = useState({});
   getData();
-  const location = useLocation();
-  useEffect(() => {
-    // console.log(location);
-    if (location.pathname == "/project") {
-      setBgStyle({
-        // transform:'translateX(-175%)'
-        left: "-50%"
-      });
-    } else {
-      setBgStyle({
-        left: "70%"
-      });
-    }
 
-    window.addEventListener('load', () => {
-      // console.log(location);
-    })
-
-    return () => {
-      window.removeEventListener('load', () => {
-        // console.log(location);
-      })
-    }
-
-  }, [location]);
   return (
     <MyProvider>
       <div className="container mx-auto">
