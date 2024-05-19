@@ -25,7 +25,7 @@ function ProjectsPreload() {
     <>
       <TERipple rippleColor="light" rippleRadius={25} className="teripplebg">
         <motion.div
-          className="ProjectContainer base-input"
+          className="ProjectContainer base-input-project"
           ref={containerRef}
           onClick={() => conOnclick()}
           style={{
@@ -164,7 +164,7 @@ function ProjectsPreload() {
             border: "1px solid rgb(228, 115, 32)"
           }}
           aria-hidden="true"
-          className="overlay-input"
+          className="overlay-input-project"
         ></div>
       </TERipple>
     </>
