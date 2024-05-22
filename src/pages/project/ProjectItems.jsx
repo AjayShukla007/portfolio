@@ -107,7 +107,7 @@ function ProjectItems(props) {
     <>
       <TERipple rippleColor="light" rippleRadius={25} className="teripplebg" >
         <motion.div
-          className="ProjectContainer base-input"
+          className="ProjectContainer base-input-project"
           style={{
             visibility: !containerView ? 'none' : 'visible',
             filter: containerView ? 'blur(0px)' : 'blur(2px)',
@@ -176,7 +176,7 @@ function ProjectItems(props) {
           <div className="projectDiscription">
             <div className="middleLines">
               <div
-                className="saparatorLine base-input2"
+                className="saparatorLine base-input2-project"
                 onMouseMove={handleMouseMove2}
                 onFocus={handleFocus2}
                 onBlur={handleBlur2}
@@ -191,7 +191,7 @@ function ProjectItems(props) {
                   WebkitMaskImage: `radial-gradient(30% 30px at ${position2.x}px ${position2.y}px, black 45%, transparent)`
                 }}
                 aria-hidden="true"
-                className="overlay-input2"
+                className="overlay-input2_project"
               ></div>
             </div>
             <div className="deacriptionText">
@@ -202,13 +202,13 @@ function ProjectItems(props) {
         <div
           ref={divRef}
           style={{
-            border: "1px solid rgb(228, 115, 32)",
+            border: "1px solid #eae8e7",
             opacity,
             WebkitMaskImage: `radial-gradient(30% 30px at ${position.x}px ${position.y}px, black 45%, transparent)`,
             filter: containerView ? 'blur(0px)' : 'blur(20px)',
           }}
           aria-hidden="true"
-          className="overlay-input"
+          className="overlay-input_project"
         ></div>
       </TERipple>
     </>
