@@ -248,7 +248,7 @@
 }
 
 .deacriptionText:hover {
-  text-shadow: 0 0 4px #fff;
+  text-shadow: 0 0 1px #fff;
   padding: 0 5% 5% 5%;
 }
 
@@ -266,7 +266,8 @@
   overflow: hidden;
 }
 
-.overlay-input2 {
+.overlay-input2_project {
+  border: #eae8e7;
   transform: translate(-20%);
   pointer-events: none;
   margin: 0 0 5% 0;
@@ -285,16 +286,18 @@
   transition: opacity 0.5s;
 }
 
-.base-input2:focus {
-  border-color: #e47320;
+.base-input2-project:focus {
+  border-color: #eae8e7 ;
   overflow: hidden;
 }
-
-.base-input:focus {
-  border-color: #e47320;
+/* the color of overlay change by changing border color of overlaydiv in project items */
+.base-input-project:focus {
+  border-color: #eae8e7 ;
+  /* border-color: #e47320; */
 }
 
-.overlay-input {
+.overlay-input_project {
+  border: #eae8e7;
   margin: 4% 0 0 0;
   pointer-events: none;
   position: absolute;
