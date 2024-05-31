@@ -1,6 +1,6 @@
 ## Welcome to my Portfolio
 
-### work under progress
+### work under progress almost completed
 
 ### Home
 ### projects
