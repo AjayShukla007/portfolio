@@ -2,7 +2,7 @@
 
 ### work under progress almost completed
 
-### Home
+### Home done
 ### projects
 ### blog
 ### case studies -working
