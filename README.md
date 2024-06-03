@@ -3,7 +3,7 @@
 ### work under progress almost completed
 
 ### Home done just need some space improvements
-### projects
+### projects done 
 ### blog
 ### case studies -working
 ### About 
