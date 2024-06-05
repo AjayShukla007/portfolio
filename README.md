@@ -4,7 +4,7 @@
 
 ### Home done just need some space improvements
 ### projects done just need some box improvements
-### blog
+### blog done 
 ### case studies -working
 ### About 
 
