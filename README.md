@@ -5,7 +5,7 @@
 ### Home done just need some space improvements
 ### projects done just need some box improvements
 ### blog done 
-### case studies -working
+### case studies -done
 ### About 
 
 # [Backend](https://github.com/AjayShukla007?tab=repositories)
