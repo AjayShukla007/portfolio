@@ -6,6 +6,6 @@
 ### projects done just need some box improvements
 ### blog done 
 ### case studies done
-### About 
+### About done
 
 # [Backend](https://github.com/AjayShukla007?tab=repositories)
