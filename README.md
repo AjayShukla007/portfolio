@@ -1,7 +1,7 @@
 ## Welcome to my Portfolio
 
 ### work under progress almost completed
-
+### working on to deploy it to the production
 ### Home done just need some space improvements
 ### projects done just need some box improvements
 ### blog done 
