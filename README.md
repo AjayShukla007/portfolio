@@ -9,7 +9,7 @@
 
 ### projects done just need some box improvements
 
-### blog done 
+### blog done
 
 ### case studies done
 
